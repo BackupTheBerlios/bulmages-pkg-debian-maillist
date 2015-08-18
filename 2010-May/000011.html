@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Bulmages-pkg-debian] mantenimiento de bulmages
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/bulmages-pkg-debian/2010-May/index.html" >
+   <LINK REL="made" HREF="mailto:bulmages-pkg-debian%40lists.berlios.de?Subject=Re%3A%20%5BBulmages-pkg-debian%5D%20mantenimiento%20de%20bulmages&In-Reply-To=%3C201005201925.01288.ochominutosdearco%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <LINK REL="Previous"  HREF="000010.html">
+   <LINK REL="Next"  HREF="000012.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Bulmages-pkg-debian] mantenimiento de bulmages</H1>
+    <B>René Mérou</B> 
+    <A HREF="mailto:bulmages-pkg-debian%40lists.berlios.de?Subject=Re%3A%20%5BBulmages-pkg-debian%5D%20mantenimiento%20de%20bulmages&In-Reply-To=%3C201005201925.01288.ochominutosdearco%40gmail.com%3E"
+       TITLE="[Bulmages-pkg-debian] mantenimiento de bulmages">ochominutosdearco a gmail.com
+       </A><BR>
+    <I>dij maig 20 19:25:01 CEST 2010</I>
+    <P><UL>
+        <LI>Missatge anterior: <A HREF="000010.html">[Bulmages-pkg-debian] mantenimiento de bulmages
+</A></li>
+        <LI>Missatge següent: <A HREF="000012.html">[Bulmages-pkg-debian] mantenimiento de bulmages
+</A></li>
+         <LI> <B>Missatges ordenats per:</B> 
+              <a href="date.html#11">[ data ]</a>
+              <a href="thread.html#11">[ fil de discussi&oacute; ]</a>
+              <a href="subject.html#11">[ assumpte ]</a>
+              <a href="author.html#11">[ autor ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>no hace falta tener uno para cada arquitectura,  hay clusters de compilacion 
+para eso.
+
+Se hace un paquete i solo debe uno preocuparse si no compila para alguna 
+arquitectura por algo en especial.  Y eso lo sabes cuando lo intentas y te dan 
+el reporte de que falla al compilar en tal maquina.
+
+
+On Jueves 20 Mayo 2010 19:18:24 Iker Salmón San Millán escribió:
+&gt;<i> Tomeu:
+</I>&gt;<i> Pues yo he tenido que descargarme todo el repositorio como anónimo, porque
+</I>&gt;<i> no me acepta la contraseña, no se por qué.  Revisa a ver si estoy bien
+</I>&gt;<i> agregado porque creo que no he hecho nada mal.
+</I>&gt;<i> 
+</I>&gt;<i> Otilio:
+</I>&gt;<i> Según me dijeron los desarrolladores de debian, no es necesario crear
+</I>&gt;<i> paquetes para todas las arquitecturas, con subir uno es suficiente. Hay
+</I>&gt;<i> gente que se encarga de portarlo a las otras arquitecturas.  Al menos eso
+</I>&gt;<i> entendí.  Así que podemos centrar los esfuerzos en crear el paquete y
+</I>&gt;<i> olvidarnos de las diferentes arquitecturas.  puedes hacerte un debootstrap
+</I>&gt;<i> con arquitectura i386 y luego hacer un chroot para trabajar con i386.
+</I>&gt;<i> 
+</I>&gt;<i> De todas formas, como de estoy no estoy seguro del todo, como ya comenté
+</I>&gt;<i> dispongo de un powerpc y un sheeva (arm) por si las moscas.  Además es
+</I>&gt;<i> conveniente hacer un chroot de todas formas. De esa forma podrás instalar
+</I>&gt;<i> todas las herramientas de desarrollo necesarias sin tener que sobrecargar
+</I>&gt;<i> tu sistema con librerías que solo vas a usar
+</I>&gt;<i> 
+</I>&gt;<i> El 20 de mayo de 2010 18:39, Otilio &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian">otilio a apdo.com</A>&gt; escribió:
+</I>&gt;<i> &gt; Yo me he dado de alta también como otilio.
+</I>&gt;<i> &gt; Puedo comenzar a probar ya mismo con amd64 si me agregas.
+</I>&gt;<i> &gt; Salut.
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; El 20/05/10 16:22, Tomeu escribió:
+</I>&gt;<i> &gt;  Ya te he agregado al proyecto.
+</I>&gt;<i> &gt;  
+</I>&gt;<i> &gt;&gt; Lo siguiente es descargar medainte subversion
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; Aqui tienes un pequeño manual::
+</I>&gt;<i> &gt;&gt; <A HREF="https://developer.berlios.de/svn/?group_id=4472">https://developer.berlios.de/svn/?group_id=4472</A>
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; No bajes sólamente el trunk sino mejor descarga el repositorio entero.
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; Una vez descargado en el directorio branches encontrarás los directorios
+</I>&gt;<i> &gt;&gt; debian y debian-packaging que imagino son el punto de partida para el
+</I>&gt;<i> &gt;&gt; empaquetado.
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; Salut
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt;&gt; Bueno, pues ya me he creado la cuenta, mi nombre de usuario es ikerssm,
+</I>&gt;<i> &gt;&gt;&gt; justo este fin de semana me mudo de casa, así que desde el viernes a la
+</I>&gt;<i> &gt;&gt;&gt; tarde hasta que me pongan la conexión a internet solo podré conectarme
+</I>&gt;<i> &gt;&gt;&gt; esporádicamente.  Aunque tal vez haya una red de libre acceso en mi
+</I>&gt;<i> &gt;&gt;&gt; nueva casa.  Quien sabe....
+</I>&gt;<i> &gt;&gt;&gt; 
+</I>&gt;<i> &gt;&gt;&gt; Saludos!
+</I>&gt;<i> &gt;&gt;&gt; 
+</I>&gt;<i> &gt;&gt;&gt; El 20 de mayo de 2010 08:13, Tomeu&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian">tborras a conetxia.com</A>&gt;  escribió:
+</I>&gt;<i> &gt;&gt;&gt;&gt; ¿Para crearme la cuenta de berlios donde lo hago? ¿en
+</I>&gt;<i> &gt;&gt;&gt;&gt; 
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; <A HREF="http://developer.berlios.de/">http://developer.berlios.de/</A> ?
+</I>&gt;<i> &gt;&gt;&gt;&gt; 
+</I>&gt;<i> &gt;&gt;&gt;&gt; Si, aqui es. Hay que hacer Nuevo Usuario via SSL.
+</I>&gt;<i> &gt;&gt;&gt; 
+</I>&gt;<i> &gt;&gt;&gt; &quot;
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; _______________________________________________
+</I>&gt;<i> &gt;&gt; Bulmages-pkg-debian mailing list
+</I>&gt;<i> &gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian">Bulmages-pkg-debian a lists.berlios.de</A>
+</I>&gt;<i> &gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian">https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian</A>
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; _______________________________________________
+</I>&gt;<i> &gt; Bulmages-pkg-debian mailing list
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian">Bulmages-pkg-debian a lists.berlios.de</A>
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian">https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Missatge anterior: <A HREF="000010.html">[Bulmages-pkg-debian] mantenimiento de bulmages
+</A></li>
+	<LI>Missatge següent: <A HREF="000012.html">[Bulmages-pkg-debian] mantenimiento de bulmages
+</A></li>     
+         <LI> <B>Missatges ordenats per:</B> 
+              <a href="date.html#11">[ data ]</a>
+              <a href="thread.html#11">[ fil de discussi&oacute; ]</a>
+              <a href="subject.html#11">[ assumpte ]</a>
+              <a href="author.html#11">[ autor ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian">M&eacute;s informaci&oacute; sobre la llista de correu Bulmages-pkg-debian</a><br>
+
+</body></html>

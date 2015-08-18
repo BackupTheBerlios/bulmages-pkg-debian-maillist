@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Bulmages-pkg-debian] Primer error
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/bulmages-pkg-debian/2010-May/index.html" >
+   <LINK REL="made" HREF="mailto:bulmages-pkg-debian%40lists.berlios.de?Subject=Re%3A%20%5BBulmages-pkg-debian%5D%20Primer%20error&In-Reply-To=%3C201005261428.46577.leo%40alaxarxa.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <LINK REL="Previous"  HREF="000021.html">
+   <LINK REL="Next"  HREF="000023.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Bulmages-pkg-debian] Primer error</H1>
+    <B>Leopold Palomo-Avellaneda</B> 
+    <A HREF="mailto:bulmages-pkg-debian%40lists.berlios.de?Subject=Re%3A%20%5BBulmages-pkg-debian%5D%20Primer%20error&In-Reply-To=%3C201005261428.46577.leo%40alaxarxa.net%3E"
+       TITLE="[Bulmages-pkg-debian] Primer error">leo a alaxarxa.net
+       </A><BR>
+    <I>dic maig 26 14:28:46 CEST 2010</I>
+    <P><UL>
+        <LI>Missatge anterior: <A HREF="000021.html">[Bulmages-pkg-debian] Primer error
+</A></li>
+        <LI>Missatge següent: <A HREF="000023.html">[Bulmages-pkg-debian] Primer error
+</A></li>
+         <LI> <B>Missatges ordenats per:</B> 
+              <a href="date.html#22">[ data ]</a>
+              <a href="thread.html#22">[ fil de discussi&oacute; ]</a>
+              <a href="subject.html#22">[ assumpte ]</a>
+              <a href="author.html#22">[ autor ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>A Dimecres 26 Maig 2010, Otilio va escriure:
+&gt;<i> En principio había pillado la idea de empaquetar con esos nombres, lo
+</I>&gt;<i> cual me parece bien. Si no he entendido mal la versión full sería una
+</I>&gt;<i> compilación de todo el trunk y luego habría que compilar los tres
+</I>&gt;<i> programas por separado (los cinco mejor dicho) para poder hacer
+</I>&gt;<i> instalaciones de un sólo paquete.
+</I>&gt;<i>
+</I>&gt;<i> Ahora bien, para compilar los paquetes por separado se supone que hay
+</I>&gt;<i> que compilar desde bulmages/bulmafact el bulmafact, bulmages/bulmatpv el
+</I>&gt;<i> bulmatpv, etc, o bien hay que hacer una compilación de varios binarios??
+</I>
+Nops,
+
+los paquetes de debian se generan a partir de un _solo_ fuente. En el 
+directorio debian hay un script &quot;rules&quot; que es el que genera casi todo.
+
+Insisto, compilar todo bulmages y instalarlo en un directorio a parte (por 
+ejemplo /opt) A partir de allá intentar discriminar los archivos de cada 
+paquete.
+
+Leo
+
+&gt;<i> Estoy un poco perdido, a ver si antes de nada vamos aclarando esos puntos.
+</I>&gt;<i>
+</I>&gt;<i> El 26/05/10 07:21, Tomeu escribió:
+</I>&gt;<i> &gt; Me he perdido.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; No entiendo que tiene que ver la propuesta de paquetes con el error en la
+</I>&gt;<i> &gt; generación del mismo.
+</I>&gt;<i>
+</I>&gt;<i> Eso mismo pensaba yo ...
+</I>&gt;<i>
+</I>&gt;<i> &gt; Salut
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;&gt; A Divendres 21 Maig 2010, Otilio va escriure:
+</I>&gt;<i> &gt;&gt;&gt; Tengo un error en la compilación, no parece falta de algún paquete:
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; dh_pysupport    -pbulmages-common /usr/share/bulmages/bgtrml2pdf
+</I>&gt;<i> &gt;&gt;&gt; dh_pysupport: Compatibility levels before 5 are deprecated.
+</I>&gt;<i> &gt;&gt;&gt; dh_pysupport    -pbulmages-admin /usr/share/bulmages/bulmasetup
+</I>&gt;<i> &gt;&gt;&gt; dh_pysupport: Compatibility levels before 5 are deprecated.
+</I>&gt;<i> &gt;&gt;&gt; Usage: movemodules [options] [directory [...]]
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; movemodules: error: debian/bulmages-admin is not a directory.
+</I>&gt;<i> &gt;&gt;&gt; dh_pysupport: /usr/share/python-support/private/movemodules
+</I>&gt;<i> &gt;&gt;&gt; debian/bulmages-admin returned exit code 2
+</I>&gt;<i> &gt;&gt;&gt; make: *** [binary-arch] Error 2
+</I>&gt;<i> &gt;&gt;&gt; dpkg-buildpackage: error: fakeroot debian/rules binary gave error exit
+</I>&gt;<i> &gt;&gt;&gt; status 2
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; bones,
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; no es un error de compilación. Es del paquete. Haber, si os bajáis el
+</I>&gt;<i> &gt;&gt; directorio debian, hay un fichero changelog con los cambios que he
+</I>&gt;<i> &gt;&gt; hecho. Tambien lo expliqué en un correo creo. Por lo tanto, una cosa que
+</I>&gt;<i> &gt;&gt; podéis hacer:
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; - compiláis i os instaláis bulmages en un directorio. Y separáis los
+</I>&gt;<i> &gt;&gt;   ficheros que consideráis de cada uno de los paquetes.
+</I>&gt;<i> &gt;&gt; - también os estudiáis la propuesta de paquetes y la comentamos.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Leo
+</I>&gt;<i> &gt;&gt; &quot;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; _______________________________________________
+</I>&gt;<i> &gt; Bulmages-pkg-debian mailing list
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian">Bulmages-pkg-debian a lists.berlios.de</A>
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian">https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian</A>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Bulmages-pkg-debian mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian">Bulmages-pkg-debian a lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian">https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian</A>
+</I>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Missatge anterior: <A HREF="000021.html">[Bulmages-pkg-debian] Primer error
+</A></li>
+	<LI>Missatge següent: <A HREF="000023.html">[Bulmages-pkg-debian] Primer error
+</A></li>     
+         <LI> <B>Missatges ordenats per:</B> 
+              <a href="date.html#22">[ data ]</a>
+              <a href="thread.html#22">[ fil de discussi&oacute; ]</a>
+              <a href="subject.html#22">[ assumpte ]</a>
+              <a href="author.html#22">[ autor ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian">M&eacute;s informaci&oacute; sobre la llista de correu Bulmages-pkg-debian</a><br>
+
+</body></html>

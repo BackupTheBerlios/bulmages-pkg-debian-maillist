@@ -1,0 +1,1796 @@
+From shaola a esdebian.org  Wed May 19 22:50:18 2010
+From: shaola a esdebian.org (=?ISO-8859-1?Q?Iker_Salm=F3n_San_Mill=E1n?=)
+Date: Wed, 19 May 2010 22:50:18 +0200
+Subject: [Bulmages-pkg-debian] mantenimiento de bulmages
+Message-ID: <AANLkTilTzT3yq2MV88T0sTgJKK1b3TYhpBa_cU9daY-q@mail.gmail.com>
+
+Bueno, rene ha confirmado que abandona el paquete, yo sigo dispuesto y con
+muchas ganas de colaborar en el empaquetado.  Me suscribí a la lista pero
+aún no he leido ningun mensaje por parte de nadie.  ¿Movemos el tema?
+
+Saludos
+
+Iker
+-------------- part següent --------------
+Un document HTML ha estat eliminat...
+URL: <https://lists.berlios.de/pipermail/bulmages-pkg-debian/attachments/20100519/3bc4085f/attachment.html>
+
+From tborras a conetxia.com  Wed May 19 23:17:50 2010
+From: tborras a conetxia.com (Tomeu)
+Date: Wed, 19 May 2010 23:17:50 +0200
+Subject: [Bulmages-pkg-debian] mantenimiento de bulmages
+In-Reply-To: <AANLkTilTzT3yq2MV88T0sTgJKK1b3TYhpBa_cU9daY-q@mail.gmail.com>
+References: <AANLkTilTzT3yq2MV88T0sTgJKK1b3TYhpBa_cU9daY-q@mail.gmail.com>
+Message-ID: <201005192317.50833.tborras@conetxia.com>
+
+Hola Iker
+
+Gracias por el mensaje, ya ni me acordaba de esto. Deberiamos moverlo.
+
+No se si sabes cual es la situación del paquete asi que te comento un poco 
+como estan las cosas. Teoricamente se encargaban entre René, Leo y Xerakko 
+pero como te ha dicho René  lo ha abandonado y Leo lleva sin pronunciarse 
+varios meses así que me imagino que estamos en un punto muerto con el paquete. 
+Yo voy bastante saturado con todo y ponerme a hacer el paquete me quitaria 
+tiempo para programar con lo que no contemplo ponerme de momento a ello aparte 
+de que no tengo ni idea de la generación de paquetes en debian. En lo que si 
+puedo ayudar es en explicar cosas sobre el programa, donde van los archivos y 
+para que son necesarios.
+
+En el svn esta lo necesario para hacer el paquete de la versión 0.11 aunque no 
+se bien en que estado está. Para poder acceder al svn necesitas tener cuenta 
+en Berlios y indicarme el nombre de usuario para que te agrege al proyecto.
+
+Supongo que la mejor forma de empezar es mirar lo que hay en el repositorio, 
+pedirle a Leo que nos explique un poco como se genera el paquete para tener un 
+punto de partida.
+
+Salut
+
+
+> Bueno, rene ha confirmado que abandona el paquete, yo sigo dispuesto y con
+> muchas ganas de colaborar en el empaquetado.  Me suscribí a la lista pero
+> aún no he leido ningun mensaje por parte de nadie.  ¿Movemos el tema?
+> 
+> Saludos
+> 
+> Iker
+> "
+
+
+From shaola a esdebian.org  Thu May 20 01:34:19 2010
+From: shaola a esdebian.org (=?ISO-8859-1?Q?Iker_Salm=F3n_San_Mill=E1n?=)
+Date: Thu, 20 May 2010 01:34:19 +0200
+Subject: [Bulmages-pkg-debian] mantenimiento de bulmages
+In-Reply-To: <201005192317.50833.tborras@conetxia.com>
+References: <AANLkTilTzT3yq2MV88T0sTgJKK1b3TYhpBa_cU9daY-q@mail.gmail.com>
+	<201005192317.50833.tborras@conetxia.com>
+Message-ID: <AANLkTinKgLlfwwsVyRAZfm_OR9RYEhJuuwL92dNHfOjF@mail.gmail.com>
+
+Hola Tomeu,  gracias por contestar.
+
+Yo me he estado leyendo de cabo a rabo la guia del desarrollador de debian.
+Y aunque tampoco se con seguirdad como va, creo que ya tengo las nociones
+necesarias para empezar,  además estoy subscrito a las lista de correo de
+debian en la que también me podran orientar.  Aunque ellos hayan abandonado
+el empaquetado, creo recordar que se comentó que lo podrían firmar si
+hacíamos un paquete que cumpla los requisitos para subirlo.
+
+Evidentemente, con la proxima congelación de squeeze es imposible conseguir
+que la versión 0.12 podamos incluirla a tiempo, pero el objetivo principal
+sería conseguir subirla a sid.
+
+Yo dispongo de mucho tiempo libre ya que por un desafortunado accidente
+estoy "jubilado" (aún no sé si es definitivo) así que al menos durante 3
+años podré dedicar mucho tiempo al proyecto.   El problema que tengo es que
+mis conicimientos de c++ son casi nulos.  Y aunque del empaquetado y
+seguimiento de bugs me puedo encargar, veo un problema que ya se mencionó en
+la otra lista.  Y es que todas las correcciones de bugs se suben al trunk en
+lugar de al branch (¿me equivoco?), por lo que a la hora de corregir los
+bugs que se vayan reportando, necesitaré  ayuda para poder seleccionar y
+aplicar los parches o identificar las revisiones del subversion o extraer
+los parches apropiados desde el trunk para poder aplicarlos sin añadir
+nuevas funcionalidades (y posibles nuevos fallos) que se vayan incorporando
+al trunk.
+
+Por lo demás me siento bastante motivado.  LLevo un tiempo planteándome el
+empaquetar algo para debian ayudando a algún desarrollador oficial o
+adoptando algún paquete.  Y como desde hace tiempo sigo este proyecto y le
+veo mucho potencial me parece una oportunidad estupenda.  Sólo espero que no
+me quede demasiado grande.  No es una aplicación simple de mantener, de
+hecho, no es un paquete sino varios los que hay que mantener.
+
+¿Para crearme la cuenta de berlios donde lo hago? ¿en
+http://developer.berlios.de/ ?
+
+Saludos!
+
+El 19 de mayo de 2010 23:17, Tomeu <tborras a conetxia.com> escribió:
+
+> Hola Iker
+>
+> Gracias por el mensaje, ya ni me acordaba de esto. Deberiamos moverlo.
+>
+> No se si sabes cual es la situación del paquete asi que te comento un poco
+> como estan las cosas. Teoricamente se encargaban entre René, Leo y Xerakko
+> pero como te ha dicho René  lo ha abandonado y Leo lleva sin pronunciarse
+> varios meses así que me imagino que estamos en un punto muerto con el
+> paquete.
+> Yo voy bastante saturado con todo y ponerme a hacer el paquete me quitaria
+> tiempo para programar con lo que no contemplo ponerme de momento a ello
+> aparte
+> de que no tengo ni idea de la generación de paquetes en debian. En lo que
+> si
+> puedo ayudar es en explicar cosas sobre el programa, donde van los archivos
+> y
+> para que son necesarios.
+>
+> En el svn esta lo necesario para hacer el paquete de la versión 0.11 aunque
+> no
+> se bien en que estado está. Para poder acceder al svn necesitas tener
+> cuenta
+> en Berlios y indicarme el nombre de usuario para que te agrege al proyecto.
+>
+> Supongo que la mejor forma de empezar es mirar lo que hay en el
+> repositorio,
+> pedirle a Leo que nos explique un poco como se genera el paquete para tener
+> un
+> punto de partida.
+>
+> Salut
+>
+>
+> > Bueno, rene ha confirmado que abandona el paquete, yo sigo dispuesto y
+> con
+> > muchas ganas de colaborar en el empaquetado.  Me suscribí a la lista pero
+> > aún no he leido ningun mensaje por parte de nadie.  ¿Movemos el tema?
+> >
+> > Saludos
+> >
+> > Iker
+> > "
+> _______________________________________________
+> Bulmages-pkg-debian mailing list
+> Bulmages-pkg-debian a lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+>
+-------------- part següent --------------
+Un document HTML ha estat eliminat...
+URL: <https://lists.berlios.de/pipermail/bulmages-pkg-debian/attachments/20100520/4d31ae51/attachment.html>
+
+From tborras a conetxia.com  Thu May 20 08:13:54 2010
+From: tborras a conetxia.com (Tomeu)
+Date: Thu, 20 May 2010 08:13:54 +0200
+Subject: [Bulmages-pkg-debian] mantenimiento de bulmages
+In-Reply-To: <AANLkTinKgLlfwwsVyRAZfm_OR9RYEhJuuwL92dNHfOjF@mail.gmail.com>
+References: <AANLkTilTzT3yq2MV88T0sTgJKK1b3TYhpBa_cU9daY-q@mail.gmail.com>
+	<201005192317.50833.tborras@conetxia.com>
+	<AANLkTinKgLlfwwsVyRAZfm_OR9RYEhJuuwL92dNHfOjF@mail.gmail.com>
+Message-ID: <201005200813.55038.tborras@conetxia.com>
+
+> Hola Tomeu,  gracias por contestar.
+> 
+> Yo me he estado leyendo de cabo a rabo la guia del desarrollador de debian.
+> Y aunque tampoco se con seguirdad como va, creo que ya tengo las nociones
+> necesarias para empezar,  además estoy subscrito a las lista de correo de
+> debian en la que también me podran orientar.  Aunque ellos hayan abandonado
+> el empaquetado, creo recordar que se comentó que lo podrían firmar si
+> hacíamos un paquete que cumpla los requisitos para subirlo.
+> 
+> Evidentemente, con la proxima congelación de squeeze es imposible conseguir
+> que la versión 0.12 podamos incluirla a tiempo, pero el objetivo principal
+> sería conseguir subirla a sid.
+> 
+> Yo dispongo de mucho tiempo libre ya que por un desafortunado accidente
+> estoy "jubilado" (aún no sé si es definitivo) así que al menos durante 3
+> años podré dedicar mucho tiempo al proyecto. 
+Lamento oir eso. Ánimo.
+
+> El problema que tengo es que
+> mis conicimientos de c++ son casi nulos.  Y aunque del empaquetado y
+> seguimiento de bugs me puedo encargar, veo un problema que ya se mencionó
+>  en la otra lista.  Y es que todas las correcciones de bugs se suben al
+>  trunk en lugar de al branch (¿me equivoco?), por lo que a la hora de
+>  corregir los bugs que se vayan reportando, necesitaré  ayuda para poder
+>  seleccionar y aplicar los parches o identificar las revisiones del
+>  subversion o extraer los parches apropiados desde el trunk para poder
+>  aplicarlos sin añadir nuevas funcionalidades (y posibles nuevos fallos)
+>  que se vayan incorporando al trunk.
+Entiendo el problema. Intentamos mantener una rama estable pero es inviable si 
+no son un número elevado de desarrolladores y en nuestro caso no es así. 
+Seguro que el dia que seamos 10 desarrolladores estará justificado mantener 
+una rama estable pero por el momento es diversificar esfuerzos cosa nada 
+conveniente.
+
+Pero no todo son desventajas. Al menos la modularidad del proyecto nos viene a 
+favor ya que las nuevas funcionalidades se hacen en proyectos separados y las 
+librerias cada vez se tocan menos.
+
+
+> 
+> Por lo demás me siento bastante motivado.  LLevo un tiempo planteándome el
+> empaquetar algo para debian ayudando a algún desarrollador oficial o
+> adoptando algún paquete.  Y como desde hace tiempo sigo este proyecto y le
+> veo mucho potencial me parece una oportunidad estupenda.  Sólo espero que
+>  no me quede demasiado grande.  No es una aplicación simple de mantener, de
+>  hecho, no es un paquete sino varios los que hay que mantener.
+> 
+> ¿Para crearme la cuenta de berlios donde lo hago? ¿en
+> http://developer.berlios.de/ ?
+
+Si, aqui es. Hay que hacer Nuevo Usuario via SSL.
+
+> 
+> Saludos!
+> 
+> El 19 de mayo de 2010 23:17, Tomeu <tborras a conetxia.com> escribió:
+> > Hola Iker
+> >
+> > Gracias por el mensaje, ya ni me acordaba de esto. Deberiamos moverlo.
+> >
+> > No se si sabes cual es la situación del paquete asi que te comento un
+> > poco como estan las cosas. Teoricamente se encargaban entre René, Leo y
+> > Xerakko pero como te ha dicho René  lo ha abandonado y Leo lleva sin
+> > pronunciarse varios meses así que me imagino que estamos en un punto
+> > muerto con el paquete.
+> > Yo voy bastante saturado con todo y ponerme a hacer el paquete me
+> > quitaria tiempo para programar con lo que no contemplo ponerme de momento
+> > a ello aparte
+> > de que no tengo ni idea de la generación de paquetes en debian. En lo que
+> > si
+> > puedo ayudar es en explicar cosas sobre el programa, donde van los
+> > archivos y
+> > para que son necesarios.
+> >
+> > En el svn esta lo necesario para hacer el paquete de la versión 0.11
+> > aunque no
+> > se bien en que estado está. Para poder acceder al svn necesitas tener
+> > cuenta
+> > en Berlios y indicarme el nombre de usuario para que te agrege al
+> > proyecto.
+> >
+> > Supongo que la mejor forma de empezar es mirar lo que hay en el
+> > repositorio,
+> > pedirle a Leo que nos explique un poco como se genera el paquete para
+> > tener un
+> > punto de partida.
+> >
+> > Salut
+> >
+> > > Bueno, rene ha confirmado que abandona el paquete, yo sigo dispuesto y
+> >
+> > con
+> >
+> > > muchas ganas de colaborar en el empaquetado.  Me suscribí a la lista
+> > > pero aún no he leido ningun mensaje por parte de nadie.  ¿Movemos el
+> > > tema?
+> > >
+> > > Saludos
+> > >
+> > > Iker
+
+
+From shaola a esdebian.org  Thu May 20 12:45:35 2010
+From: shaola a esdebian.org (=?ISO-8859-1?Q?Iker_Salm=F3n_San_Mill=E1n?=)
+Date: Thu, 20 May 2010 12:45:35 +0200
+Subject: [Bulmages-pkg-debian] mantenimiento de bulmages
+In-Reply-To: <201005200813.55038.tborras@conetxia.com>
+References: <AANLkTilTzT3yq2MV88T0sTgJKK1b3TYhpBa_cU9daY-q@mail.gmail.com>
+	<201005192317.50833.tborras@conetxia.com>
+	<AANLkTinKgLlfwwsVyRAZfm_OR9RYEhJuuwL92dNHfOjF@mail.gmail.com>
+	<201005200813.55038.tborras@conetxia.com>
+Message-ID: <AANLkTikE-yvbS5nsms1jQvwwpap6u6femY55R--xqFET@mail.gmail.com>
+
+Bueno, pues ya me he creado la cuenta, mi nombre de usuario es ikerssm,
+justo este fin de semana me mudo de casa, así que desde el viernes a la
+tarde hasta que me pongan la conexión a internet solo podré conectarme
+esporádicamente.  Aunque tal vez haya una red de libre acceso en mi nueva
+casa.  Quien sabe....
+
+Saludos!
+
+
+El 20 de mayo de 2010 08:13, Tomeu <tborras a conetxia.com> escribió:
+
+>
+> > ¿Para crearme la cuenta de berlios donde lo hago? ¿en
+> > http://developer.berlios.de/ ?
+>
+> Si, aqui es. Hay que hacer Nuevo Usuario via SSL.
+>
+>
+-------------- part següent --------------
+Un document HTML ha estat eliminat...
+URL: <https://lists.berlios.de/pipermail/bulmages-pkg-debian/attachments/20100520/54e0d879/attachment.html>
+
+From leo a alaxarxa.net  Thu May 20 13:22:19 2010
+From: leo a alaxarxa.net (Leopold Palomo Avellaneda)
+Date: Thu, 20 May 2010 11:22:19 +0000
+Subject: [Bulmages-pkg-debian] mantenimiento de bulmages
+In-Reply-To: <201005192317.50833.tborras@conetxia.com>
+References: <AANLkTilTzT3yq2MV88T0sTgJKK1b3TYhpBa_cU9daY-q@mail.gmail.com>
+	<201005192317.50833.tborras@conetxia.com>
+Message-ID: <201005201122.19819.leo@alaxarxa.net>
+
+A Dimecres 19 Maig 2010, Tomeu va escriure:
+> Hola Iker
+> 
+> Gracias por el mensaje, ya ni me acordaba de esto. Deberiamos moverlo.
+> 
+> No se si sabes cual es la situación del paquete asi que te comento un poco
+> como estan las cosas. Teoricamente se encargaban entre René, Leo y Xerakko
+> pero como te ha dicho René  lo ha abandonado y Leo lleva sin pronunciarse
+> varios meses así que me imagino que estamos en un punto muerto con el
+> paquete. 
+
+Bones,
+
+Leo se ha pronunciado  pero se vuelve a pronunciar. pero entiendo a Tomeu y a 
+la gente. Me sabe muy mal, pero tengo un montón de temas personales y estoy 
+superado des des haces unos meses.
+
+
+> Yo voy bastante saturado con todo y ponerme a hacer el paquete me
+> quitaria tiempo para programar con lo que no contemplo ponerme de momento
+> a ello aparte de que no tengo ni idea de la generación de paquetes en
+> debian. En lo que si puedo ayudar es en explicar cosas sobre el programa,
+> donde van los archivos y para que son necesarios.
+
+Tomeu NO ha de hacer el paquete y me planteo quitarlo de uploader. És uno de 
+los desarroladores principales y NO DEBERIA hacer el paquete. Está en 
+"overflow" y no ĺe toca esto. Por lo tanto somos otras personas las que han de 
+apechugar si queremos tener un paquete en debian (ubuntu)
+ 
+> En el svn esta lo necesario para hacer el paquete de la versión 0.11 aunque
+> no se bien en que estado está. Para poder acceder al svn necesitas tener
+> cuenta en Berlios y indicarme el nombre de usuario para que te agrege al
+> proyecto.
+ 
+> Supongo que la mejor forma de empezar es mirar lo que hay en el
+> repositorio, pedirle a Leo que nos explique un poco como se genera el
+> paquete para tener un punto de partida.
+
+
+bueno, el paquete está a medio hacer porque lo estoy simplificando. Encuentro 
+que no tiene sentido tener ese número de paquetes por lo que:
+    - bulmacont + bulmacont-plugins -> bulmacont
+    - bulmafact + bulmafact-plugins -> bulmafact
+    - bulmatpv + bulmatpv-plugins -> bulmatpv
+    - bulmages-servers + bulmages-admin -> bulmages-servers-admin
+    - bulmages -> bulmages-full (with the launcher)
+
+se aceptan cambios en los nombres y sugerencias. Hace falta revisar los 
+nombres de los ficheros i comprobar que todo compila y cuadra. Subiré los 
+cambios hoy, cuando acabe de compilar. 
+
+Ningún problema si escribís a la lista, a mi personalmente, etc. haber si lo 
+sacamos de encima de una vez .. gracias por la paciencia y me sabe muy mal 
+todo el asunto.
+
+Leo
+
+
+-- 
+--
+Linux User 152692     PGP: 0xF944807E
+Catalonia
+-------------------------------------
+A: Because it messes up the order in which people normally read text.
+Q: Why is top-posting such a bad thing?
+A: Top-posting.
+Q: What is the most annoying thing in e-mail?
+
+
+From shaola a esdebian.org  Thu May 20 13:57:31 2010
+From: shaola a esdebian.org (=?ISO-8859-1?Q?Iker_Salm=F3n_San_Mill=E1n?=)
+Date: Thu, 20 May 2010 13:57:31 +0200
+Subject: [Bulmages-pkg-debian] Fwd:  mantenimiento de bulmages
+In-Reply-To: <AANLkTin287AUnrqdSrHKZZVz80wBp4zurIaFRv12kyIX@mail.gmail.com>
+References: <AANLkTilTzT3yq2MV88T0sTgJKK1b3TYhpBa_cU9daY-q@mail.gmail.com>
+	<201005192317.50833.tborras@conetxia.com>
+	<201005201122.19819.leo@alaxarxa.net>
+	<AANLkTin287AUnrqdSrHKZZVz80wBp4zurIaFRv12kyIX@mail.gmail.com>
+Message-ID: <AANLkTimTiqNss-nWV-7TcSdIs1n5baIbj_3o_IJAegJW@mail.gmail.com>
+
+*Perdón, este mensaje está reenviado a la lista porque sin querer lo he
+enviado solo a Leo previamente.*
+
+
+Hola Leo, coincidimos en que Tomeu no tiene que preocuparse del
+empaquetamiento.  No hace falta que te disculpes por nada (al menos de mi
+parte),  yo estoy  aún  verde con el tema del empaquetamiento, pero como ya
+he comentado, dispongo de mucho tiempo libre y me estoy poniendo al día tan
+rápido como puedo.  También me he leido la documentación que supongo que
+escribió rené aunque no se si está un poco desfasada:
+http://www.iglues.org/wiki_developers/doku.php?id=documentacion:guia_empaquetado_debian#guia_de_empaquetado_de_bulmages_para_debian
+
+Ya he hecho algunas pruebas con algunos programitas simples y creo que he
+conseguido construir paquetes correctamente, al menos las estructura del
+paquete y los directorios de instalación cuadran con los estándares de
+debian.   Pero la suite bulmagés es bastante más compleja que las pruebas
+que he hecho.  Sin embargo, con unas pocas directrices y un poco de ayuda al
+principio creo que podré ser de gran ayuda y al final descargaros a todos de
+la mayoría del trabajo.
+
+Saludos!
+
+El 20 de mayo de 2010 13:22, Leopold Palomo Avellaneda
+<leo a alaxarxa.net>escribió:
+
+A Dimecres 19 Maig 2010, Tomeu va escriure:
+> > Hola Iker
+> >
+> > Gracias por el mensaje, ya ni me acordaba de esto. Deberiamos moverlo.
+> >
+> > No se si sabes cual es la situación del paquete asi que te comento un
+> poco
+> > como estan las cosas. Teoricamente se encargaban entre René, Leo y
+> Xerakko
+> > pero como te ha dicho René  lo ha abandonado y Leo lleva sin pronunciarse
+> > varios meses así que me imagino que estamos en un punto muerto con el
+> > paquete.
+>
+> Bones,
+>
+> Leo se ha pronunciado  pero se vuelve a pronunciar. pero entiendo a Tomeu y
+> a
+> la gente. Me sabe muy mal, pero tengo un montón de temas personales y estoy
+> superado des des haces unos meses.
+>
+>
+> > Yo voy bastante saturado con todo y ponerme a hacer el paquete me
+> > quitaria tiempo para programar con lo que no contemplo ponerme de momento
+> > a ello aparte de que no tengo ni idea de la generación de paquetes en
+> > debian. En lo que si puedo ayudar es en explicar cosas sobre el programa,
+> > donde van los archivos y para que son necesarios.
+>
+> Tomeu NO ha de hacer el paquete y me planteo quitarlo de uploader. És uno
+> de
+> los desarroladores principales y NO DEBERIA hacer el paquete. Está en
+> "overflow" y no ĺe toca esto. Por lo tanto somos otras personas las que han
+> de
+> apechugar si queremos tener un paquete en debian (ubuntu)
+>
+> > En el svn esta lo necesario para hacer el paquete de la versión 0.11
+> aunque
+> > no se bien en que estado está. Para poder acceder al svn necesitas tener
+> > cuenta en Berlios y indicarme el nombre de usuario para que te agrege al
+> > proyecto.
+>
+> > Supongo que la mejor forma de empezar es mirar lo que hay en el
+> > repositorio, pedirle a Leo que nos explique un poco como se genera el
+> > paquete para tener un punto de partida.
+>
+>
+> bueno, el paquete está a medio hacer porque lo estoy simplificando.
+> Encuentro
+> que no tiene sentido tener ese número de paquetes por lo que:
+>    - bulmacont + bulmacont-plugins -> bulmacont
+>    - bulmafact + bulmafact-plugins -> bulmafact
+>    - bulmatpv + bulmatpv-plugins -> bulmatpv
+>    - bulmages-servers + bulmages-admin -> bulmages-servers-admin
+>    - bulmages -> bulmages-full (with the launcher)
+>
+> se aceptan cambios en los nombres y sugerencias. Hace falta revisar los
+> nombres de los ficheros i comprobar que todo compila y cuadra. Subiré los
+> cambios hoy, cuando acabe de compilar.
+>
+> Ningún problema si escribís a la lista, a mi personalmente, etc. haber si
+> lo
+> sacamos de encima de una vez .. gracias por la paciencia y me sabe muy mal
+> todo el asunto.
+>
+> Leo
+>
+>
+> --
+> --
+> Linux User 152692     PGP: 0xF944807E
+> Catalonia
+> -------------------------------------
+> A: Because it messes up the order in which people normally read text.
+> Q: Why is top-posting such a bad thing?
+> A: Top-posting.
+> Q: What is the most annoying thing in e-mail?
+> _______________________________________________
+> Bulmages-pkg-debian mailing list
+> Bulmages-pkg-debian a lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+>
+-------------- part següent --------------
+Un document HTML ha estat eliminat...
+URL: <https://lists.berlios.de/pipermail/bulmages-pkg-debian/attachments/20100520/eb8eff52/attachment.html>
+
+From tborras a conetxia.com  Thu May 20 16:22:39 2010
+From: tborras a conetxia.com (Tomeu)
+Date: Thu, 20 May 2010 16:22:39 +0200
+Subject: [Bulmages-pkg-debian] mantenimiento de bulmages
+In-Reply-To: <AANLkTikE-yvbS5nsms1jQvwwpap6u6femY55R--xqFET@mail.gmail.com>
+References: <AANLkTilTzT3yq2MV88T0sTgJKK1b3TYhpBa_cU9daY-q@mail.gmail.com>
+	<201005200813.55038.tborras@conetxia.com>
+	<AANLkTikE-yvbS5nsms1jQvwwpap6u6femY55R--xqFET@mail.gmail.com>
+Message-ID: <201005201622.39288.tborras@conetxia.com>
+
+Ya te he agregado al proyecto.
+
+Lo siguiente es descargar medainte subversion
+
+Aqui tienes un pequeño manual::
+https://developer.berlios.de/svn/?group_id=4472
+
+No bajes sólamente el trunk sino mejor descarga el repositorio entero.
+
+Una vez descargado en el directorio branches encontrarás los directorios 
+debian y debian-packaging que imagino son el punto de partida para el 
+empaquetado.
+
+Salut
+
+
+> Bueno, pues ya me he creado la cuenta, mi nombre de usuario es ikerssm,
+> justo este fin de semana me mudo de casa, así que desde el viernes a la
+> tarde hasta que me pongan la conexión a internet solo podré conectarme
+> esporádicamente.  Aunque tal vez haya una red de libre acceso en mi nueva
+> casa.  Quien sabe....
+> 
+> Saludos!
+> 
+> El 20 de mayo de 2010 08:13, Tomeu <tborras a conetxia.com> escribió:
+> > > ¿Para crearme la cuenta de berlios donde lo hago? ¿en
+> > > http://developer.berlios.de/ ?
+> >
+> > Si, aqui es. Hay que hacer Nuevo Usuario via SSL.
+> "
+
+
+From otilio a apdo.com  Thu May 20 18:39:47 2010
+From: otilio a apdo.com (Otilio)
+Date: Thu, 20 May 2010 18:39:47 +0200
+Subject: [Bulmages-pkg-debian] mantenimiento de bulmages
+In-Reply-To: <201005201622.39288.tborras@conetxia.com>
+References: <AANLkTilTzT3yq2MV88T0sTgJKK1b3TYhpBa_cU9daY-q@mail.gmail.com>	<201005200813.55038.tborras@conetxia.com>	<AANLkTikE-yvbS5nsms1jQvwwpap6u6femY55R--xqFET@mail.gmail.com>
+	<201005201622.39288.tborras@conetxia.com>
+Message-ID: <4BF565D3.9040701@apdo.com>
+
+Yo me he dado de alta también como otilio.
+Puedo comenzar a probar ya mismo con amd64 si me agregas.
+Salut.
+
+
+El 20/05/10 16:22, Tomeu escribió:
+> Ya te he agregado al proyecto.
+>
+> Lo siguiente es descargar medainte subversion
+>
+> Aqui tienes un pequeño manual::
+> https://developer.berlios.de/svn/?group_id=4472
+>
+> No bajes sólamente el trunk sino mejor descarga el repositorio entero.
+>
+> Una vez descargado en el directorio branches encontrarás los directorios
+> debian y debian-packaging que imagino son el punto de partida para el
+> empaquetado.
+>
+> Salut
+>
+>
+>    
+>> Bueno, pues ya me he creado la cuenta, mi nombre de usuario es ikerssm,
+>> justo este fin de semana me mudo de casa, así que desde el viernes a la
+>> tarde hasta que me pongan la conexión a internet solo podré conectarme
+>> esporádicamente.  Aunque tal vez haya una red de libre acceso en mi nueva
+>> casa.  Quien sabe....
+>>
+>> Saludos!
+>>
+>> El 20 de mayo de 2010 08:13, Tomeu<tborras a conetxia.com>  escribió:
+>>      
+>>>> ¿Para crearme la cuenta de berlios donde lo hago? ¿en
+>>>> http://developer.berlios.de/ ?
+>>>>          
+>>> Si, aqui es. Hay que hacer Nuevo Usuario via SSL.
+>>>        
+>> "
+>>      
+> _______________________________________________
+> Bulmages-pkg-debian mailing list
+> Bulmages-pkg-debian a lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+>    
+
+
+
+From otilio a apdo.com  Thu May 20 19:16:52 2010
+From: otilio a apdo.com (Otilio)
+Date: Thu, 20 May 2010 19:16:52 +0200
+Subject: [Bulmages-pkg-debian] Fwd: Re:  mantenimiento de bulmages
+Message-ID: <4BF56E84.70307@apdo.com>
+
+Un document HTML ha estat eliminat...
+URL: <https://lists.berlios.de/pipermail/bulmages-pkg-debian/attachments/20100520/a302a87d/attachment.html>
+
+From shaola a esdebian.org  Thu May 20 19:18:24 2010
+From: shaola a esdebian.org (=?ISO-8859-1?Q?Iker_Salm=F3n_San_Mill=E1n?=)
+Date: Thu, 20 May 2010 19:18:24 +0200
+Subject: [Bulmages-pkg-debian] mantenimiento de bulmages
+In-Reply-To: <4BF565D3.9040701@apdo.com>
+References: <AANLkTilTzT3yq2MV88T0sTgJKK1b3TYhpBa_cU9daY-q@mail.gmail.com>
+	<201005200813.55038.tborras@conetxia.com>
+	<AANLkTikE-yvbS5nsms1jQvwwpap6u6femY55R--xqFET@mail.gmail.com>
+	<201005201622.39288.tborras@conetxia.com> <4BF565D3.9040701@apdo.com>
+Message-ID: <AANLkTimv4LotIOXjDiClNjdr7F8sZjLe5OyKCEE7f-Np@mail.gmail.com>
+
+Tomeu:
+Pues yo he tenido que descargarme todo el repositorio como anónimo, porque
+no me acepta la contraseña, no se por qué.  Revisa a ver si estoy bien
+agregado porque creo que no he hecho nada mal.
+
+Otilio:
+Según me dijeron los desarrolladores de debian, no es necesario crear
+paquetes para todas las arquitecturas, con subir uno es suficiente. Hay
+gente que se encarga de portarlo a las otras arquitecturas.  Al menos eso
+entendí.  Así que podemos centrar los esfuerzos en crear el paquete y
+olvidarnos de las diferentes arquitecturas.  puedes hacerte un debootstrap
+con arquitectura i386 y luego hacer un chroot para trabajar con i386.
+
+De todas formas, como de estoy no estoy seguro del todo, como ya comenté
+dispongo de un powerpc y un sheeva (arm) por si las moscas.  Además es
+conveniente hacer un chroot de todas formas. De esa forma podrás instalar
+todas las herramientas de desarrollo necesarias sin tener que sobrecargar tu
+sistema con librerías que solo vas a usar
+
+El 20 de mayo de 2010 18:39, Otilio <otilio a apdo.com> escribió:
+
+> Yo me he dado de alta también como otilio.
+> Puedo comenzar a probar ya mismo con amd64 si me agregas.
+> Salut.
+>
+>
+> El 20/05/10 16:22, Tomeu escribió:
+>
+>  Ya te he agregado al proyecto.
+>>
+>> Lo siguiente es descargar medainte subversion
+>>
+>> Aqui tienes un pequeño manual::
+>> https://developer.berlios.de/svn/?group_id=4472
+>>
+>> No bajes sólamente el trunk sino mejor descarga el repositorio entero.
+>>
+>> Una vez descargado en el directorio branches encontrarás los directorios
+>> debian y debian-packaging que imagino son el punto de partida para el
+>> empaquetado.
+>>
+>> Salut
+>>
+>>
+>>
+>>
+>>> Bueno, pues ya me he creado la cuenta, mi nombre de usuario es ikerssm,
+>>> justo este fin de semana me mudo de casa, así que desde el viernes a la
+>>> tarde hasta que me pongan la conexión a internet solo podré conectarme
+>>> esporádicamente.  Aunque tal vez haya una red de libre acceso en mi nueva
+>>> casa.  Quien sabe....
+>>>
+>>> Saludos!
+>>>
+>>> El 20 de mayo de 2010 08:13, Tomeu<tborras a conetxia.com>  escribió:
+>>>
+>>>
+>>>> ¿Para crearme la cuenta de berlios donde lo hago? ¿en
+>>>>> http://developer.berlios.de/ ?
+>>>>>
+>>>>>
+>>>> Si, aqui es. Hay que hacer Nuevo Usuario via SSL.
+>>>>
+>>>>
+>>> "
+>>>
+>>>
+>> _______________________________________________
+>> Bulmages-pkg-debian mailing list
+>> Bulmages-pkg-debian a lists.berlios.de
+>> https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+>>
+>>
+>
+> _______________________________________________
+> Bulmages-pkg-debian mailing list
+> Bulmages-pkg-debian a lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+>
+-------------- part següent --------------
+Un document HTML ha estat eliminat...
+URL: <https://lists.berlios.de/pipermail/bulmages-pkg-debian/attachments/20100520/67f34806/attachment.html>
+
+From ochominutosdearco a gmail.com  Thu May 20 19:25:01 2010
+From: ochominutosdearco a gmail.com (=?iso-8859-15?q?Ren=E9_M=E9rou?=)
+Date: Thu, 20 May 2010 19:25:01 +0200
+Subject: [Bulmages-pkg-debian] mantenimiento de bulmages
+In-Reply-To: <AANLkTimv4LotIOXjDiClNjdr7F8sZjLe5OyKCEE7f-Np@mail.gmail.com>
+References: <AANLkTilTzT3yq2MV88T0sTgJKK1b3TYhpBa_cU9daY-q@mail.gmail.com>
+	<4BF565D3.9040701@apdo.com>
+	<AANLkTimv4LotIOXjDiClNjdr7F8sZjLe5OyKCEE7f-Np@mail.gmail.com>
+Message-ID: <201005201925.01288.ochominutosdearco@gmail.com>
+
+no hace falta tener uno para cada arquitectura,  hay clusters de compilacion 
+para eso.
+
+Se hace un paquete i solo debe uno preocuparse si no compila para alguna 
+arquitectura por algo en especial.  Y eso lo sabes cuando lo intentas y te dan 
+el reporte de que falla al compilar en tal maquina.
+
+
+On Jueves 20 Mayo 2010 19:18:24 Iker Salmón San Millán escribió:
+> Tomeu:
+> Pues yo he tenido que descargarme todo el repositorio como anónimo, porque
+> no me acepta la contraseña, no se por qué.  Revisa a ver si estoy bien
+> agregado porque creo que no he hecho nada mal.
+> 
+> Otilio:
+> Según me dijeron los desarrolladores de debian, no es necesario crear
+> paquetes para todas las arquitecturas, con subir uno es suficiente. Hay
+> gente que se encarga de portarlo a las otras arquitecturas.  Al menos eso
+> entendí.  Así que podemos centrar los esfuerzos en crear el paquete y
+> olvidarnos de las diferentes arquitecturas.  puedes hacerte un debootstrap
+> con arquitectura i386 y luego hacer un chroot para trabajar con i386.
+> 
+> De todas formas, como de estoy no estoy seguro del todo, como ya comenté
+> dispongo de un powerpc y un sheeva (arm) por si las moscas.  Además es
+> conveniente hacer un chroot de todas formas. De esa forma podrás instalar
+> todas las herramientas de desarrollo necesarias sin tener que sobrecargar
+> tu sistema con librerías que solo vas a usar
+> 
+> El 20 de mayo de 2010 18:39, Otilio <otilio a apdo.com> escribió:
+> > Yo me he dado de alta también como otilio.
+> > Puedo comenzar a probar ya mismo con amd64 si me agregas.
+> > Salut.
+> > 
+> > El 20/05/10 16:22, Tomeu escribió:
+> >  Ya te he agregado al proyecto.
+> >  
+> >> Lo siguiente es descargar medainte subversion
+> >> 
+> >> Aqui tienes un pequeño manual::
+> >> https://developer.berlios.de/svn/?group_id=4472
+> >> 
+> >> No bajes sólamente el trunk sino mejor descarga el repositorio entero.
+> >> 
+> >> Una vez descargado en el directorio branches encontrarás los directorios
+> >> debian y debian-packaging que imagino son el punto de partida para el
+> >> empaquetado.
+> >> 
+> >> Salut
+> >> 
+> >>> Bueno, pues ya me he creado la cuenta, mi nombre de usuario es ikerssm,
+> >>> justo este fin de semana me mudo de casa, así que desde el viernes a la
+> >>> tarde hasta que me pongan la conexión a internet solo podré conectarme
+> >>> esporádicamente.  Aunque tal vez haya una red de libre acceso en mi
+> >>> nueva casa.  Quien sabe....
+> >>> 
+> >>> Saludos!
+> >>> 
+> >>> El 20 de mayo de 2010 08:13, Tomeu<tborras a conetxia.com>  escribió:
+> >>>> ¿Para crearme la cuenta de berlios donde lo hago? ¿en
+> >>>> 
+> >>>>> http://developer.berlios.de/ ?
+> >>>> 
+> >>>> Si, aqui es. Hay que hacer Nuevo Usuario via SSL.
+> >>> 
+> >>> "
+> >> 
+> >> _______________________________________________
+> >> Bulmages-pkg-debian mailing list
+> >> Bulmages-pkg-debian a lists.berlios.de
+> >> https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+> > 
+> > _______________________________________________
+> > Bulmages-pkg-debian mailing list
+> > Bulmages-pkg-debian a lists.berlios.de
+> > https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+
+
+From otilio a apdo.com  Thu May 20 19:30:24 2010
+From: otilio a apdo.com (Otilio)
+Date: Thu, 20 May 2010 19:30:24 +0200
+Subject: [Bulmages-pkg-debian] mantenimiento de bulmages
+In-Reply-To: <AANLkTimv4LotIOXjDiClNjdr7F8sZjLe5OyKCEE7f-Np@mail.gmail.com>
+References: <AANLkTilTzT3yq2MV88T0sTgJKK1b3TYhpBa_cU9daY-q@mail.gmail.com>	<201005200813.55038.tborras@conetxia.com>	<AANLkTikE-yvbS5nsms1jQvwwpap6u6femY55R--xqFET@mail.gmail.com>	<201005201622.39288.tborras@conetxia.com>
+	<4BF565D3.9040701@apdo.com>
+	<AANLkTimv4LotIOXjDiClNjdr7F8sZjLe5OyKCEE7f-Np@mail.gmail.com>
+Message-ID: <4BF571B0.6040905@apdo.com>
+
+Un document HTML ha estat eliminat...
+URL: <https://lists.berlios.de/pipermail/bulmages-pkg-debian/attachments/20100520/5e30ee63/attachment.html>
+
+From leo a alaxarxa.net  Thu May 20 19:49:56 2010
+From: leo a alaxarxa.net (Leopold Palomo-Avellaneda)
+Date: Thu, 20 May 2010 19:49:56 +0200
+Subject: [Bulmages-pkg-debian] mantenimiento de bulmages
+In-Reply-To: <4BF571B0.6040905@apdo.com>
+References: <AANLkTilTzT3yq2MV88T0sTgJKK1b3TYhpBa_cU9daY-q@mail.gmail.com>
+	<AANLkTimv4LotIOXjDiClNjdr7F8sZjLe5OyKCEE7f-Np@mail.gmail.com>
+	<4BF571B0.6040905@apdo.com>
+Message-ID: <201005201949.57355.leo@alaxarxa.net>
+
+A Dijous 20 Maig 2010, Otilio va escriure:
+>  Si claro, es lógico, con las fuentes ya pueden hacer el resto.
+>  Pues mejor que mejor, a probar se ha dicho.
+>
+>  PD: Lo que aún no he probado es la creación del paquete fuente para
+> Debian, le echaré un ojo ...
+
+Otilio,
+
+1) si quieres que te ponga como uploader dame un nombre completo.
+2) porfa, porfa, porfa, no mensajes en html ....
+3) yo compilo con cmake 2.8 i no tengo problemas. Por favor, que te falla?
+
+Leo
+
+
+>  El 20/05/10 19:18, Iker Salmón San Millán escribió:
+> Tomeu:
+>  Pues yo he tenido que descargarme todo el repositorio como anónimo, porque
+> no me acepta la contraseña, no se por qué.  Revisa a ver si estoy bien
+> agregado porque creo que no he hecho nada mal.
+>
+>  Otilio:
+>  Según me dijeron los desarrolladores de debian, no es necesario crear
+> paquetes para todas las arquitecturas, con subir uno es suficiente. Hay
+> gente que se encarga de portarlo a las otras arquitecturas.  Al menos eso
+> entendí.  Así que podemos centrar los esfuerzos en crear el paquete y
+> olvidarnos de las diferentes arquitecturas.  puedes hacerte un debootstrap
+> con arquitectura i386 y luego hacer un chroot para trabajar con i386.
+>
+>  De todas formas, como de estoy no estoy seguro del todo, como ya comenté
+> dispongo de un powerpc y un sheeva (arm) por si las moscas.  Además es
+> conveniente hacer un chroot de todas formas. De esa forma podrás instalar
+> todas las herramientas de desarrollo necesarias sin tener que sobrecargar
+> tu sistema con librerías que solo vas a usar
+>
+>
+> El 20 de mayo de 2010 18:39, Otilio <otilio a apdo.com> escribió:
+>
+> Yo me he dado de alta también como otilio.
+>  Puedo comenzar a probar ya mismo con amd64 si me agregas.
+>  Salut.
+>
+>
+>  El 20/05/10 16:22, Tomeu escribió:
+>
+>
+>  Ya te he agregado al proyecto.
+>
+>  Lo siguiente es descargar medainte subversion
+>
+>  Aqui tienes un pequeño manual::
+>  https://developer.berlios.de/svn/?group_id=4472
+>
+>  No bajes sólamente el trunk sino mejor descarga el repositorio entero.
+>
+>  Una vez descargado en el directorio branches encontrarás los directorios
+>  debian y debian-packaging que imagino son el punto de partida para el
+>  empaquetado.
+>
+>  Salut
+>
+>
+>   
+>
+>  Bueno, pues ya me he creado la cuenta, mi nombre de usuario es ikerssm,
+>  justo este fin de semana me mudo de casa, así que desde el viernes a la
+>  tarde hasta que me pongan la conexión a internet solo podré conectarme
+>  esporádicamente.  Aunque tal vez haya una red de libre acceso en mi nueva
+>  casa.  Quien sabe....
+>
+>  Saludos!
+>
+>  El 20 de mayo de 2010 08:13, Tomeu<tborras a conetxia.com>  escribió:
+>     
+>
+> ¿Para crearme la cuenta de berlios donde lo hago? ¿en
+>  http://developer.berlios.de/ ?
+>         
+>
+>  Si, aqui es. Hay que hacer Nuevo Usuario via SSL.
+>       
+>
+>  "
+>     
+>
+>  _______________________________________________
+>  Bulmages-pkg-debian mailing list
+>  Bulmages-pkg-debian a lists.berlios.de
+>  https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+>   
+>
+>
+>  _______________________________________________
+>  Bulmages-pkg-debian mailing list
+>  Bulmages-pkg-debian a lists.berlios.de
+>  https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+>
+>
+>
+>
+> _______________________________________________
+> Bulmages-pkg-debian mailing list
+> Bulmages-pkg-debian a lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+
+
+
+
+From otilio a apdo.com  Thu May 20 20:47:11 2010
+From: otilio a apdo.com (Otilio)
+Date: Thu, 20 May 2010 20:47:11 +0200
+Subject: [Bulmages-pkg-debian] mantenimiento de bulmages
+In-Reply-To: <201005201949.57355.leo@alaxarxa.net>
+References: <AANLkTilTzT3yq2MV88T0sTgJKK1b3TYhpBa_cU9daY-q@mail.gmail.com>	<AANLkTimv4LotIOXjDiClNjdr7F8sZjLe5OyKCEE7f-Np@mail.gmail.com>	<4BF571B0.6040905@apdo.com>
+	<201005201949.57355.leo@alaxarxa.net>
+Message-ID: <4BF583AF.6070905@apdo.com>
+
+El 20/05/10 19:49, Leopold Palomo-Avellaneda escribió:
+> A Dijous 20 Maig 2010, Otilio va escriure:
+>    
+>>   Si claro, es lógico, con las fuentes ya pueden hacer el resto.
+>>   Pues mejor que mejor, a probar se ha dicho.
+>>
+>>   PD: Lo que aún no he probado es la creación del paquete fuente para
+>> Debian, le echaré un ojo ...
+>>      
+> Otilio,
+>
+> 1) si quieres que te ponga como uploader dame un nombre completo.
+>    
+Santos Martinez
+> 2) porfa, porfa, porfa, no mensajes en html ....
+>    
+OK
+> 3) yo compilo con cmake 2.8 i no tengo problemas. Por favor, que te falla?
+>
+> Leo
+>    
+Falla la versión "oficial" 0.12 que hay para descargar, la del svn no 
+falla :)
+>
+>    
+>>   El 20/05/10 19:18, Iker Salmón San Millán escribió:
+>> Tomeu:
+>>   Pues yo he tenido que descargarme todo el repositorio como anónimo, porque
+>> no me acepta la contraseña, no se por qué.  Revisa a ver si estoy bien
+>> agregado porque creo que no he hecho nada mal.
+>>
+>>   Otilio:
+>>   Según me dijeron los desarrolladores de debian, no es necesario crear
+>> paquetes para todas las arquitecturas, con subir uno es suficiente. Hay
+>> gente que se encarga de portarlo a las otras arquitecturas.  Al menos eso
+>> entendí.  Así que podemos centrar los esfuerzos en crear el paquete y
+>> olvidarnos de las diferentes arquitecturas.  puedes hacerte un debootstrap
+>> con arquitectura i386 y luego hacer un chroot para trabajar con i386.
+>>
+>>   De todas formas, como de estoy no estoy seguro del todo, como ya comenté
+>> dispongo de un powerpc y un sheeva (arm) por si las moscas.  Además es
+>> conveniente hacer un chroot de todas formas. De esa forma podrás instalar
+>> todas las herramientas de desarrollo necesarias sin tener que sobrecargar
+>> tu sistema con librerías que solo vas a usar
+>>
+>>
+>> El 20 de mayo de 2010 18:39, Otilio<otilio a apdo.com>  escribió:
+>>
+>> Yo me he dado de alta también como otilio.
+>>   Puedo comenzar a probar ya mismo con amd64 si me agregas.
+>>   Salut.
+>>
+>>
+>>   El 20/05/10 16:22, Tomeu escribió:
+>>
+>>
+>>   Ya te he agregado al proyecto.
+>>
+>>   Lo siguiente es descargar medainte subversion
+>>
+>>   Aqui tienes un pequeño manual::
+>>   https://developer.berlios.de/svn/?group_id=4472
+>>
+>>   No bajes sólamente el trunk sino mejor descarga el repositorio entero.
+>>
+>>   Una vez descargado en el directorio branches encontrarás los directorios
+>>   debian y debian-packaging que imagino son el punto de partida para el
+>>   empaquetado.
+>>
+>>   Salut
+>>
+>>
+>>    
+>>
+>>   Bueno, pues ya me he creado la cuenta, mi nombre de usuario es ikerssm,
+>>   justo este fin de semana me mudo de casa, así que desde el viernes a la
+>>   tarde hasta que me pongan la conexión a internet solo podré conectarme
+>>   esporádicamente.  Aunque tal vez haya una red de libre acceso en mi nueva
+>>   casa.  Quien sabe....
+>>
+>>   Saludos!
+>>
+>>   El 20 de mayo de 2010 08:13, Tomeu<tborras a conetxia.com>    escribió:
+>>      
+>>
+>> ¿Para crearme la cuenta de berlios donde lo hago? ¿en
+>>   http://developer.berlios.de/ ?
+>>          
+>>
+>>   Si, aqui es. Hay que hacer Nuevo Usuario via SSL.
+>>        
+>>
+>>   "
+>>      
+>>
+>>   _______________________________________________
+>>   Bulmages-pkg-debian mailing list
+>>   Bulmages-pkg-debian a lists.berlios.de
+>>   https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+>>    
+>>
+>>
+>>   _______________________________________________
+>>   Bulmages-pkg-debian mailing list
+>>   Bulmages-pkg-debian a lists.berlios.de
+>>   https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+>>
+>>
+>>
+>>
+>> _______________________________________________
+>> Bulmages-pkg-debian mailing list
+>> Bulmages-pkg-debian a lists.berlios.de
+>> https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+>>      
+>
+> _______________________________________________
+> Bulmages-pkg-debian mailing list
+> Bulmages-pkg-debian a lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+>    
+
+
+
+From tborras a conetxia.com  Thu May 20 20:55:47 2010
+From: tborras a conetxia.com (Tomeu)
+Date: Thu, 20 May 2010 20:55:47 +0200
+Subject: [Bulmages-pkg-debian] mantenimiento de bulmages
+In-Reply-To: <AANLkTimv4LotIOXjDiClNjdr7F8sZjLe5OyKCEE7f-Np@mail.gmail.com>
+References: <AANLkTilTzT3yq2MV88T0sTgJKK1b3TYhpBa_cU9daY-q@mail.gmail.com>
+	<4BF565D3.9040701@apdo.com>
+	<AANLkTimv4LotIOXjDiClNjdr7F8sZjLe5OyKCEE7f-Np@mail.gmail.com>
+Message-ID: <201005202055.47585.tborras@conetxia.com>
+
+> Tomeu:
+> Pues yo he tenido que descargarme todo el repositorio como anónimo, porque
+> no me acepta la contraseña, no se por qué.  Revisa a ver si estoy bien
+> agregado porque creo que no he hecho nada mal.
+Espera un dia ya que la web y las cuentas no van completamente bien 
+sincronizadas.
+
+Salut
+
+> 
+> Otilio:
+> Según me dijeron los desarrolladores de debian, no es necesario crear
+> paquetes para todas las arquitecturas, con subir uno es suficiente. Hay
+> gente que se encarga de portarlo a las otras arquitecturas.  Al menos eso
+> entendí.  Así que podemos centrar los esfuerzos en crear el paquete y
+> olvidarnos de las diferentes arquitecturas.  puedes hacerte un debootstrap
+> con arquitectura i386 y luego hacer un chroot para trabajar con i386.
+> 
+> De todas formas, como de estoy no estoy seguro del todo, como ya comenté
+> dispongo de un powerpc y un sheeva (arm) por si las moscas.  Además es
+> conveniente hacer un chroot de todas formas. De esa forma podrás instalar
+> todas las herramientas de desarrollo necesarias sin tener que sobrecargar
+>  tu sistema con librerías que solo vas a usar
+> 
+> El 20 de mayo de 2010 18:39, Otilio <otilio a apdo.com> escribió:
+> > Yo me he dado de alta también como otilio.
+> > Puedo comenzar a probar ya mismo con amd64 si me agregas.
+> > Salut.
+> >
+> >
+> > El 20/05/10 16:22, Tomeu escribió:
+> >
+> >  Ya te he agregado al proyecto.
+> >
+> >> Lo siguiente es descargar medainte subversion
+> >>
+> >> Aqui tienes un pequeño manual::
+> >> https://developer.berlios.de/svn/?group_id=4472
+> >>
+> >> No bajes sólamente el trunk sino mejor descarga el repositorio entero.
+> >>
+> >> Una vez descargado en el directorio branches encontrarás los directorios
+> >> debian y debian-packaging que imagino son el punto de partida para el
+> >> empaquetado.
+> >>
+> >> Salut
+> >>
+> >>> Bueno, pues ya me he creado la cuenta, mi nombre de usuario es ikerssm,
+> >>> justo este fin de semana me mudo de casa, así que desde el viernes a la
+> >>> tarde hasta que me pongan la conexión a internet solo podré conectarme
+> >>> esporádicamente.  Aunque tal vez haya una red de libre acceso en mi
+> >>> nueva casa.  Quien sabe....
+> >>>
+> >>> Saludos!
+> >>>
+> >>> El 20 de mayo de 2010 08:13, Tomeu<tborras a conetxia.com>  escribió:
+> >>>> ¿Para crearme la cuenta de berlios donde lo hago? ¿en
+> >>>>
+> >>>>> http://developer.berlios.de/ ?
+> >>>>
+> >>>> Si, aqui es. Hay que hacer Nuevo Usuario via SSL.
+> >>>
+> >>> "
+> >>
+> >> _______________________________________________
+> >> Bulmages-pkg-debian mailing list
+> >> Bulmages-pkg-debian a lists.berlios.de
+> >> https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+> >
+> > _______________________________________________
+> > Bulmages-pkg-debian mailing list
+> > Bulmages-pkg-debian a lists.berlios.de
+> > https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+> "
+
+
+From tborras a conetxia.com  Thu May 20 21:03:18 2010
+From: tborras a conetxia.com (Tomeu)
+Date: Thu, 20 May 2010 21:03:18 +0200
+Subject: [Bulmages-pkg-debian] mantenimiento de bulmages
+In-Reply-To: <4BF565D3.9040701@apdo.com>
+References: <AANLkTilTzT3yq2MV88T0sTgJKK1b3TYhpBa_cU9daY-q@mail.gmail.com>
+	<201005201622.39288.tborras@conetxia.com>
+	<4BF565D3.9040701@apdo.com>
+Message-ID: <201005202103.19009.tborras@conetxia.com>
+
+Bien
+
+Ya estas agregado al proyecto.
+Lo mismo que a iker, igual tarda un rato en aceptarte el SVN.
+
+Salut
+
+
+> Yo me he dado de alta también como otilio.
+> Puedo comenzar a probar ya mismo con amd64 si me agregas.
+> Salut.
+> 
+> El 20/05/10 16:22, Tomeu escribió:
+> > Ya te he agregado al proyecto.
+> >
+> > Lo siguiente es descargar medainte subversion
+> >
+> > Aqui tienes un pequeño manual::
+> > https://developer.berlios.de/svn/?group_id=4472
+> >
+> > No bajes sólamente el trunk sino mejor descarga el repositorio entero.
+> >
+> > Una vez descargado en el directorio branches encontrarás los directorios
+> > debian y debian-packaging que imagino son el punto de partida para el
+> > empaquetado.
+> >
+> > Salut
+> >
+> >> Bueno, pues ya me he creado la cuenta, mi nombre de usuario es ikerssm,
+> >> justo este fin de semana me mudo de casa, así que desde el viernes a la
+> >> tarde hasta que me pongan la conexión a internet solo podré conectarme
+> >> esporádicamente.  Aunque tal vez haya una red de libre acceso en mi
+> >> nueva casa.  Quien sabe....
+> >>
+> >> Saludos!
+> >>
+> >> El 20 de mayo de 2010 08:13, Tomeu<tborras a conetxia.com>  escribió:
+> >>>> ¿Para crearme la cuenta de berlios donde lo hago? ¿en
+> >>>> http://developer.berlios.de/ ?
+> >>>
+> >>> Si, aqui es. Hay que hacer Nuevo Usuario via SSL.
+> >>
+> >> "
+> >
+> > _______________________________________________
+> > Bulmages-pkg-debian mailing list
+> > Bulmages-pkg-debian a lists.berlios.de
+> > https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+> 
+> _______________________________________________
+> Bulmages-pkg-debian mailing list
+> Bulmages-pkg-debian a lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+> "
+
+
+From otilio a apdo.com  Fri May 21 11:14:18 2010
+From: otilio a apdo.com (Otilio)
+Date: Fri, 21 May 2010 11:14:18 +0200
+Subject: [Bulmages-pkg-debian] Primer error
+Message-ID: <4BF64EEA.50002@apdo.com>
+
+Tengo un error en la compilación, no parece falta de algún paquete:
+
+dh_pysupport    -pbulmages-common /usr/share/bulmages/bgtrml2pdf
+dh_pysupport: Compatibility levels before 5 are deprecated.
+dh_pysupport    -pbulmages-admin /usr/share/bulmages/bulmasetup
+dh_pysupport: Compatibility levels before 5 are deprecated.
+Usage: movemodules [options] [directory [...]]
+
+movemodules: error: debian/bulmages-admin is not a directory.
+dh_pysupport: /usr/share/python-support/private/movemodules 
+debian/bulmages-admin returned exit code 2
+make: *** [binary-arch] Error 2
+dpkg-buildpackage: error: fakeroot debian/rules binary gave error exit 
+status 2
+
+
+
+From leo a alaxarxa.net  Wed May 26 00:21:08 2010
+From: leo a alaxarxa.net (Leopold Palomo Avellaneda)
+Date: Tue, 25 May 2010 22:21:08 +0000
+Subject: [Bulmages-pkg-debian] Primer error
+In-Reply-To: <4BF64EEA.50002@apdo.com>
+References: <4BF64EEA.50002@apdo.com>
+Message-ID: <201005252221.09301.leo@alaxarxa.net>
+
+A Divendres 21 Maig 2010, Otilio va escriure:
+> Tengo un error en la compilación, no parece falta de algún paquete:
+> 
+> dh_pysupport    -pbulmages-common /usr/share/bulmages/bgtrml2pdf
+> dh_pysupport: Compatibility levels before 5 are deprecated.
+> dh_pysupport    -pbulmages-admin /usr/share/bulmages/bulmasetup
+> dh_pysupport: Compatibility levels before 5 are deprecated.
+> Usage: movemodules [options] [directory [...]]
+> 
+> movemodules: error: debian/bulmages-admin is not a directory.
+> dh_pysupport: /usr/share/python-support/private/movemodules
+> debian/bulmages-admin returned exit code 2
+> make: *** [binary-arch] Error 2
+> dpkg-buildpackage: error: fakeroot debian/rules binary gave error exit
+> status 2
+
+bones,
+
+
+no es un error de compilación. Es del paquete. Haber, si os bajáis el 
+directorio debian, hay un fichero changelog con los cambios que he hecho. 
+Tambien lo expliqué en un correo creo. Por lo tanto, una cosa que podéis 
+hacer:
+
+- compiláis i os instaláis bulmages en un directorio. Y separáis los ficheros 
+que consideráis de cada uno de los paquetes. 
+- también os estudiáis la propuesta de paquetes y la comentamos.
+
+Leo
+
+
+-- 
+--
+Linux User 152692     PGP: 0xF944807E
+Catalonia
+-------------------------------------
+A: Because it messes up the order in which people normally read text.
+Q: Why is top-posting such a bad thing?
+A: Top-posting.
+Q: What is the most annoying thing in e-mail?
+
+
+From tborras a conetxia.com  Wed May 26 07:21:38 2010
+From: tborras a conetxia.com (Tomeu)
+Date: Wed, 26 May 2010 07:21:38 +0200
+Subject: [Bulmages-pkg-debian] Primer error
+In-Reply-To: <201005252221.09301.leo@alaxarxa.net>
+References: <4BF64EEA.50002@apdo.com> <201005252221.09301.leo@alaxarxa.net>
+Message-ID: <201005260721.38496.tborras@conetxia.com>
+
+Me he perdido.
+
+No entiendo que tiene que ver la propuesta de paquetes con el error en la 
+generación del mismo.
+
+Salut
+
+
+> A Divendres 21 Maig 2010, Otilio va escriure:
+> > Tengo un error en la compilación, no parece falta de algún paquete:
+> >
+> > dh_pysupport    -pbulmages-common /usr/share/bulmages/bgtrml2pdf
+> > dh_pysupport: Compatibility levels before 5 are deprecated.
+> > dh_pysupport    -pbulmages-admin /usr/share/bulmages/bulmasetup
+> > dh_pysupport: Compatibility levels before 5 are deprecated.
+> > Usage: movemodules [options] [directory [...]]
+> >
+> > movemodules: error: debian/bulmages-admin is not a directory.
+> > dh_pysupport: /usr/share/python-support/private/movemodules
+> > debian/bulmages-admin returned exit code 2
+> > make: *** [binary-arch] Error 2
+> > dpkg-buildpackage: error: fakeroot debian/rules binary gave error exit
+> > status 2
+> 
+> bones,
+> 
+> 
+> no es un error de compilación. Es del paquete. Haber, si os bajáis el
+> directorio debian, hay un fichero changelog con los cambios que he hecho.
+> Tambien lo expliqué en un correo creo. Por lo tanto, una cosa que podéis
+> hacer:
+> 
+> - compiláis i os instaláis bulmages en un directorio. Y separáis los
+>  ficheros que consideráis de cada uno de los paquetes.
+> - también os estudiáis la propuesta de paquetes y la comentamos.
+> 
+> Leo
+> "
+
+
+From leo a alaxarxa.net  Wed May 26 12:58:25 2010
+From: leo a alaxarxa.net (Leopold Palomo-Avellaneda)
+Date: Wed, 26 May 2010 12:58:25 +0200
+Subject: [Bulmages-pkg-debian] Primer error
+In-Reply-To: <201005260721.38496.tborras@conetxia.com>
+References: <4BF64EEA.50002@apdo.com> <201005252221.09301.leo@alaxarxa.net>
+	<201005260721.38496.tborras@conetxia.com>
+Message-ID: <201005261258.26308.leo@alaxarxa.net>
+
+A Dimecres 26 Maig 2010, Tomeu va escriure:
+> Me he perdido.
+>
+> No entiendo que tiene que ver la propuesta de paquetes con el error en la
+> generación del mismo.
+
+pues que el script de construcción de paquetes busca unos ficheros y los 
+asigna a un paquete que no existe. Se entendió mi petición?
+
+Leo
+
+> Salut
+>
+> > A Divendres 21 Maig 2010, Otilio va escriure:
+> > > Tengo un error en la compilación, no parece falta de algún paquete:
+> > >
+> > > dh_pysupport    -pbulmages-common /usr/share/bulmages/bgtrml2pdf
+> > > dh_pysupport: Compatibility levels before 5 are deprecated.
+> > > dh_pysupport    -pbulmages-admin /usr/share/bulmages/bulmasetup
+> > > dh_pysupport: Compatibility levels before 5 are deprecated.
+> > > Usage: movemodules [options] [directory [...]]
+> > >
+> > > movemodules: error: debian/bulmages-admin is not a directory.
+> > > dh_pysupport: /usr/share/python-support/private/movemodules
+> > > debian/bulmages-admin returned exit code 2
+> > > make: *** [binary-arch] Error 2
+> > > dpkg-buildpackage: error: fakeroot debian/rules binary gave error exit
+> > > status 2
+> >
+> > bones,
+> >
+> >
+> > no es un error de compilación. Es del paquete. Haber, si os bajáis el
+> > directorio debian, hay un fichero changelog con los cambios que he hecho.
+> > Tambien lo expliqué en un correo creo. Por lo tanto, una cosa que podéis
+> > hacer:
+> >
+> > - compiláis i os instaláis bulmages en un directorio. Y separáis los
+> >  ficheros que consideráis de cada uno de los paquetes.
+> > - también os estudiáis la propuesta de paquetes y la comentamos.
+> >
+> > Leo
+> > "
+>
+> _______________________________________________
+> Bulmages-pkg-debian mailing list
+> Bulmages-pkg-debian a lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+
+
+
+
+From otilio a apdo.com  Wed May 26 13:06:31 2010
+From: otilio a apdo.com (Otilio)
+Date: Wed, 26 May 2010 13:06:31 +0200
+Subject: [Bulmages-pkg-debian] Primer error
+In-Reply-To: <201005260721.38496.tborras@conetxia.com>
+References: <4BF64EEA.50002@apdo.com> <201005252221.09301.leo@alaxarxa.net>
+	<201005260721.38496.tborras@conetxia.com>
+Message-ID: <4BFD00B7.2060401@apdo.com>
+
+En principio había pillado la idea de empaquetar con esos nombres, lo 
+cual me parece bien. Si no he entendido mal la versión full sería una 
+compilación de todo el trunk y luego habría que compilar los tres 
+programas por separado (los cinco mejor dicho) para poder hacer 
+instalaciones de un sólo paquete.
+
+Ahora bien, para compilar los paquetes por separado se supone que hay 
+que compilar desde bulmages/bulmafact el bulmafact, bulmages/bulmatpv el 
+bulmatpv, etc, o bien hay que hacer una compilación de varios binarios??
+
+Estoy un poco perdido, a ver si antes de nada vamos aclarando esos puntos.
+
+
+El 26/05/10 07:21, Tomeu escribió:
+> Me he perdido.
+>
+> No entiendo que tiene que ver la propuesta de paquetes con el error en la
+> generación del mismo.
+
+Eso mismo pensaba yo ...
+
+>
+> Salut
+>
+>
+>> A Divendres 21 Maig 2010, Otilio va escriure:
+>>> Tengo un error en la compilación, no parece falta de algún paquete:
+>>>
+>>> dh_pysupport    -pbulmages-common /usr/share/bulmages/bgtrml2pdf
+>>> dh_pysupport: Compatibility levels before 5 are deprecated.
+>>> dh_pysupport    -pbulmages-admin /usr/share/bulmages/bulmasetup
+>>> dh_pysupport: Compatibility levels before 5 are deprecated.
+>>> Usage: movemodules [options] [directory [...]]
+>>>
+>>> movemodules: error: debian/bulmages-admin is not a directory.
+>>> dh_pysupport: /usr/share/python-support/private/movemodules
+>>> debian/bulmages-admin returned exit code 2
+>>> make: *** [binary-arch] Error 2
+>>> dpkg-buildpackage: error: fakeroot debian/rules binary gave error exit
+>>> status 2
+>>
+>> bones,
+>>
+>>
+>> no es un error de compilación. Es del paquete. Haber, si os bajáis el
+>> directorio debian, hay un fichero changelog con los cambios que he hecho.
+>> Tambien lo expliqué en un correo creo. Por lo tanto, una cosa que podéis
+>> hacer:
+>>
+>> - compiláis i os instaláis bulmages en un directorio. Y separáis los
+>>   ficheros que consideráis de cada uno de los paquetes.
+>> - también os estudiáis la propuesta de paquetes y la comentamos.
+>>
+>> Leo
+>> "
+> _______________________________________________
+> Bulmages-pkg-debian mailing list
+> Bulmages-pkg-debian a lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+
+
+From leo a alaxarxa.net  Wed May 26 14:28:46 2010
+From: leo a alaxarxa.net (Leopold Palomo-Avellaneda)
+Date: Wed, 26 May 2010 14:28:46 +0200
+Subject: [Bulmages-pkg-debian] Primer error
+In-Reply-To: <4BFD00B7.2060401@apdo.com>
+References: <4BF64EEA.50002@apdo.com> <201005260721.38496.tborras@conetxia.com>
+	<4BFD00B7.2060401@apdo.com>
+Message-ID: <201005261428.46577.leo@alaxarxa.net>
+
+A Dimecres 26 Maig 2010, Otilio va escriure:
+> En principio había pillado la idea de empaquetar con esos nombres, lo
+> cual me parece bien. Si no he entendido mal la versión full sería una
+> compilación de todo el trunk y luego habría que compilar los tres
+> programas por separado (los cinco mejor dicho) para poder hacer
+> instalaciones de un sólo paquete.
+>
+> Ahora bien, para compilar los paquetes por separado se supone que hay
+> que compilar desde bulmages/bulmafact el bulmafact, bulmages/bulmatpv el
+> bulmatpv, etc, o bien hay que hacer una compilación de varios binarios??
+
+Nops,
+
+los paquetes de debian se generan a partir de un _solo_ fuente. En el 
+directorio debian hay un script "rules" que es el que genera casi todo.
+
+Insisto, compilar todo bulmages y instalarlo en un directorio a parte (por 
+ejemplo /opt) A partir de allá intentar discriminar los archivos de cada 
+paquete.
+
+Leo
+
+> Estoy un poco perdido, a ver si antes de nada vamos aclarando esos puntos.
+>
+> El 26/05/10 07:21, Tomeu escribió:
+> > Me he perdido.
+> >
+> > No entiendo que tiene que ver la propuesta de paquetes con el error en la
+> > generación del mismo.
+>
+> Eso mismo pensaba yo ...
+>
+> > Salut
+> >
+> >> A Divendres 21 Maig 2010, Otilio va escriure:
+> >>> Tengo un error en la compilación, no parece falta de algún paquete:
+> >>>
+> >>> dh_pysupport    -pbulmages-common /usr/share/bulmages/bgtrml2pdf
+> >>> dh_pysupport: Compatibility levels before 5 are deprecated.
+> >>> dh_pysupport    -pbulmages-admin /usr/share/bulmages/bulmasetup
+> >>> dh_pysupport: Compatibility levels before 5 are deprecated.
+> >>> Usage: movemodules [options] [directory [...]]
+> >>>
+> >>> movemodules: error: debian/bulmages-admin is not a directory.
+> >>> dh_pysupport: /usr/share/python-support/private/movemodules
+> >>> debian/bulmages-admin returned exit code 2
+> >>> make: *** [binary-arch] Error 2
+> >>> dpkg-buildpackage: error: fakeroot debian/rules binary gave error exit
+> >>> status 2
+> >>
+> >> bones,
+> >>
+> >>
+> >> no es un error de compilación. Es del paquete. Haber, si os bajáis el
+> >> directorio debian, hay un fichero changelog con los cambios que he
+> >> hecho. Tambien lo expliqué en un correo creo. Por lo tanto, una cosa que
+> >> podéis hacer:
+> >>
+> >> - compiláis i os instaláis bulmages en un directorio. Y separáis los
+> >>   ficheros que consideráis de cada uno de los paquetes.
+> >> - también os estudiáis la propuesta de paquetes y la comentamos.
+> >>
+> >> Leo
+> >> "
+> >
+> > _______________________________________________
+> > Bulmages-pkg-debian mailing list
+> > Bulmages-pkg-debian a lists.berlios.de
+> > https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+>
+> _______________________________________________
+> Bulmages-pkg-debian mailing list
+> Bulmages-pkg-debian a lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+
+
+
+
+From otilio a apdo.com  Wed May 26 19:42:30 2010
+From: otilio a apdo.com (Otilio)
+Date: Wed, 26 May 2010 19:42:30 +0200
+Subject: [Bulmages-pkg-debian] Primer error
+In-Reply-To: <201005261428.46577.leo@alaxarxa.net>
+References: <4BF64EEA.50002@apdo.com>
+	<201005260721.38496.tborras@conetxia.com>	<4BFD00B7.2060401@apdo.com>
+	<201005261428.46577.leo@alaxarxa.net>
+Message-ID: <4BFD5D86.1040605@apdo.com>
+
+El 26/05/10 14:28, Leopold Palomo-Avellaneda escribió:
+> A Dimecres 26 Maig 2010, Otilio va escriure:
+>> En principio había pillado la idea de empaquetar con esos nombres, lo
+>> cual me parece bien. Si no he entendido mal la versión full sería una
+>> compilación de todo el trunk y luego habría que compilar los tres
+>> programas por separado (los cinco mejor dicho) para poder hacer
+>> instalaciones de un sólo paquete.
+>>
+>> Ahora bien, para compilar los paquetes por separado se supone que hay
+>> que compilar desde bulmages/bulmafact el bulmafact, bulmages/bulmatpv el
+>> bulmatpv, etc, o bien hay que hacer una compilación de varios binarios??
+>
+> Nops,
+>
+> los paquetes de debian se generan a partir de un _solo_ fuente. En el
+> directorio debian hay un script "rules" que es el que genera casi todo.
+>
+> Insisto, compilar todo bulmages y instalarlo en un directorio a parte (por
+> ejemplo /opt) A partir de allá intentar discriminar los archivos de cada
+> paquete.
+
+Ahora si que estoy peor que antes, por que yo nunca jamás instalo el 
+programa para generar los binarios Debian, simplemente lo genero y a 
+partir de ahí ya lo instalo para probarlo.
+
+Me explico, hago el cmake para la precompilación y a continuación 
+simplemente un dpkg-buildpackage me construye el binario (ya que los 
+archivos rules, control, etc los has dejado hechos) siempre que compile 
+correctamente, al menos es así como lo he hecho siempre con buenos 
+resultados. Si utilizas otra forma para construirlo me tendrás que decir 
+cómo...
+
+>
+> Leo
+>
+>> Estoy un poco perdido, a ver si antes de nada vamos aclarando esos puntos.
+>>
+>> El 26/05/10 07:21, Tomeu escribió:
+>>> Me he perdido.
+>>>
+>>> No entiendo que tiene que ver la propuesta de paquetes con el error en la
+>>> generación del mismo.
+>>
+>> Eso mismo pensaba yo ...
+>>
+>>> Salut
+>>>
+>>>> A Divendres 21 Maig 2010, Otilio va escriure:
+>>>>> Tengo un error en la compilación, no parece falta de algún paquete:
+>>>>>
+>>>>> dh_pysupport    -pbulmages-common /usr/share/bulmages/bgtrml2pdf
+>>>>> dh_pysupport: Compatibility levels before 5 are deprecated.
+>>>>> dh_pysupport    -pbulmages-admin /usr/share/bulmages/bulmasetup
+>>>>> dh_pysupport: Compatibility levels before 5 are deprecated.
+>>>>> Usage: movemodules [options] [directory [...]]
+>>>>>
+>>>>> movemodules: error: debian/bulmages-admin is not a directory.
+>>>>> dh_pysupport: /usr/share/python-support/private/movemodules
+>>>>> debian/bulmages-admin returned exit code 2
+>>>>> make: *** [binary-arch] Error 2
+>>>>> dpkg-buildpackage: error: fakeroot debian/rules binary gave error exit
+>>>>> status 2
+>>>>
+>>>> bones,
+>>>>
+>>>>
+>>>> no es un error de compilación. Es del paquete. Haber, si os bajáis el
+>>>> directorio debian, hay un fichero changelog con los cambios que he
+>>>> hecho. Tambien lo expliqué en un correo creo. Por lo tanto, una cosa que
+>>>> podéis hacer:
+>>>>
+>>>> - compiláis i os instaláis bulmages en un directorio. Y separáis los
+>>>>    ficheros que consideráis de cada uno de los paquetes.
+>>>> - también os estudiáis la propuesta de paquetes y la comentamos.
+>>>>
+>>>> Leo
+>>>> "
+>>>
+>>> _______________________________________________
+>>> Bulmages-pkg-debian mailing list
+>>> Bulmages-pkg-debian a lists.berlios.de
+>>> https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+>>
+>> _______________________________________________
+>> Bulmages-pkg-debian mailing list
+>> Bulmages-pkg-debian a lists.berlios.de
+>> https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+>
+>
+> _______________________________________________
+> Bulmages-pkg-debian mailing list
+> Bulmages-pkg-debian a lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+
+
+From ochominutosdearco a gmail.com  Wed May 26 20:38:58 2010
+From: ochominutosdearco a gmail.com (=?iso-8859-1?q?Ren=E9_M=E9rou?=)
+Date: Wed, 26 May 2010 20:38:58 +0200
+Subject: [Bulmages-pkg-debian] suerte
+Message-ID: <201005262038.58630.ochominutosdearco@gmail.com>
+
+Bueno pues,  me voy de esta lista.
+
+Ya nos iremos viendo por la lista de bulmages.
+
+un saludo y mucha suerte.
+
+
+From otilio a apdo.com  Thu May 27 11:23:47 2010
+From: otilio a apdo.com (Otilio)
+Date: Thu, 27 May 2010 11:23:47 +0200
+Subject: [Bulmages-pkg-debian] Primer error
+In-Reply-To: <4BFD5D86.1040605@apdo.com>
+References: <4BF64EEA.50002@apdo.com>	<201005260721.38496.tborras@conetxia.com>	<4BFD00B7.2060401@apdo.com>	<201005261428.46577.leo@alaxarxa.net>
+	<4BFD5D86.1040605@apdo.com>
+Message-ID: <4BFE3A23.1080203@apdo.com>
+
+Vale, cerrando un poco el asunto, hay un error en el rules, hay que 
+sustituir la cadena -tbulmages-admin por tbulmages-servers-admin de 
+acuerdo a las nuevas directrices de paquetería.
+Me aparecen más errores que seguiré intentando depurar poco a poco.
+
+Por cierto Leo, hay un problema con el registro en Berlios y no me 
+llegan los correos de confirmación a esta cuenta, con lo que he tenido 
+que hacerme otra con otra dirección de correo.
+
+Los datos son:
+User: smestrada
+Nombre completo: Santos Martinez Estrada
+
+Saludos.
+
+
+El 26/05/10 19:42, Otilio escribió:
+> El 26/05/10 14:28, Leopold Palomo-Avellaneda escribió:
+>> A Dimecres 26 Maig 2010, Otilio va escriure:
+>>> En principio había pillado la idea de empaquetar con esos nombres, lo
+>>> cual me parece bien. Si no he entendido mal la versión full sería una
+>>> compilación de todo el trunk y luego habría que compilar los tres
+>>> programas por separado (los cinco mejor dicho) para poder hacer
+>>> instalaciones de un sólo paquete.
+>>>
+>>> Ahora bien, para compilar los paquetes por separado se supone que hay
+>>> que compilar desde bulmages/bulmafact el bulmafact, bulmages/bulmatpv el
+>>> bulmatpv, etc, o bien hay que hacer una compilación de varios binarios??
+>>
+>> Nops,
+>>
+>> los paquetes de debian se generan a partir de un _solo_ fuente. En el
+>> directorio debian hay un script "rules" que es el que genera casi todo.
+>>
+>> Insisto, compilar todo bulmages y instalarlo en un directorio a parte
+>> (por
+>> ejemplo /opt) A partir de allá intentar discriminar los archivos de cada
+>> paquete.
+>
+> Ahora si que estoy peor que antes, por que yo nunca jamás instalo el
+> programa para generar los binarios Debian, simplemente lo genero y a
+> partir de ahí ya lo instalo para probarlo.
+>
+> Me explico, hago el cmake para la precompilación y a continuación
+> simplemente un dpkg-buildpackage me construye el binario (ya que los
+> archivos rules, control, etc los has dejado hechos) siempre que compile
+> correctamente, al menos es así como lo he hecho siempre con buenos
+> resultados. Si utilizas otra forma para construirlo me tendrás que decir
+> cómo...
+>
+>>
+>> Leo
+>>
+>>> Estoy un poco perdido, a ver si antes de nada vamos aclarando esos
+>>> puntos.
+>>>
+>>> El 26/05/10 07:21, Tomeu escribió:
+>>>> Me he perdido.
+>>>>
+>>>> No entiendo que tiene que ver la propuesta de paquetes con el error
+>>>> en la
+>>>> generación del mismo.
+>>>
+>>> Eso mismo pensaba yo ...
+>>>
+>>>> Salut
+>>>>
+>>>>> A Divendres 21 Maig 2010, Otilio va escriure:
+>>>>>> Tengo un error en la compilación, no parece falta de algún paquete:
+>>>>>>
+>>>>>> dh_pysupport -pbulmages-common /usr/share/bulmages/bgtrml2pdf
+>>>>>> dh_pysupport: Compatibility levels before 5 are deprecated.
+>>>>>> dh_pysupport -pbulmages-admin /usr/share/bulmages/bulmasetup
+>>>>>> dh_pysupport: Compatibility levels before 5 are deprecated.
+>>>>>> Usage: movemodules [options] [directory [...]]
+>>>>>>
+>>>>>> movemodules: error: debian/bulmages-admin is not a directory.
+>>>>>> dh_pysupport: /usr/share/python-support/private/movemodules
+>>>>>> debian/bulmages-admin returned exit code 2
+>>>>>> make: *** [binary-arch] Error 2
+>>>>>> dpkg-buildpackage: error: fakeroot debian/rules binary gave error
+>>>>>> exit
+>>>>>> status 2
+>>>>>
+>>>>> bones,
+>>>>>
+>>>>>
+>>>>> no es un error de compilación. Es del paquete. Haber, si os bajáis el
+>>>>> directorio debian, hay un fichero changelog con los cambios que he
+>>>>> hecho. Tambien lo expliqué en un correo creo. Por lo tanto, una
+>>>>> cosa que
+>>>>> podéis hacer:
+>>>>>
+>>>>> - compiláis i os instaláis bulmages en un directorio. Y separáis los
+>>>>> ficheros que consideráis de cada uno de los paquetes.
+>>>>> - también os estudiáis la propuesta de paquetes y la comentamos.
+>>>>>
+>>>>> Leo
+>>>>> "
+>>>>
+>>>> _______________________________________________
+>>>> Bulmages-pkg-debian mailing list
+>>>> Bulmages-pkg-debian a lists.berlios.de
+>>>> https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+>>>
+>>> _______________________________________________
+>>> Bulmages-pkg-debian mailing list
+>>> Bulmages-pkg-debian a lists.berlios.de
+>>> https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+>>
+>>
+>> _______________________________________________
+>> Bulmages-pkg-debian mailing list
+>> Bulmages-pkg-debian a lists.berlios.de
+>> https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+> _______________________________________________
+> Bulmages-pkg-debian mailing list
+> Bulmages-pkg-debian a lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+
+

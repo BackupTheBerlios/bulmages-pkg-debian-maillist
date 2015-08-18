@@ -1,0 +1,615 @@
+From otilio a apdo.com  Tue Jun  1 15:46:21 2010
+From: otilio a apdo.com (Otilio)
+Date: Tue, 01 Jun 2010 15:46:21 +0200
+Subject: [Bulmages-pkg-debian] Este no consigo solucionarlo
+Message-ID: <4C050F2D.5020307@apdo.com>
+
+dpkg-shlibdeps: error: no dependency information found for 
+/usr/local/lib/libbulmages.so.0.12 (used by 
+debian/bulmages/usr/bin/bulmages).
+dh_shlibdeps: dpkg-shlibdeps -Tdebian/bulmages.substvars 
+debian/bulmages/usr/bin/bulmages returned exit code 2
+make: *** [binary-arch] Error 9
+dpkg-buildpackage: error: fakeroot debian/rules binary gave error exit 
+status 2
+
+Como se puede apreciar intenta buscar las librerías en /usr/local y da 
+el error, a pesar de que el cmake tiene especificado que la instalación 
+es en /usr.
+Me he quedado atascado ahí, lo siento, no encuentro la solución a esto.
+Alguna pista de dónde puedo buscar??
+
+
+
+From leo a alaxarxa.net  Tue Jun  1 15:57:48 2010
+From: leo a alaxarxa.net (Leopold Palomo-Avellaneda)
+Date: Tue, 1 Jun 2010 15:57:48 +0200
+Subject: [Bulmages-pkg-debian] Este no consigo solucionarlo
+In-Reply-To: <4C050F2D.5020307@apdo.com>
+References: <4C050F2D.5020307@apdo.com>
+Message-ID: <201006011557.48933.leo@alaxarxa.net>
+
+A Dimarts 01 Juny 2010, Otilio va escriure:
+> dpkg-shlibdeps: error: no dependency information found for
+> /usr/local/lib/libbulmages.so.0.12 (used by
+> debian/bulmages/usr/bin/bulmages).
+> dh_shlibdeps: dpkg-shlibdeps -Tdebian/bulmages.substvars
+> debian/bulmages/usr/bin/bulmages returned exit code 2
+> make: *** [binary-arch] Error 9
+> dpkg-buildpackage: error: fakeroot debian/rules binary gave error exit
+> status 2
+>
+> Como se puede apreciar intenta buscar las librerías en /usr/local y da
+> el error, a pesar de que el cmake tiene especificado que la instalación
+> es en /usr.
+> Me he quedado atascado ahí, lo siento, no encuentro la solución a esto.
+> Alguna pista de dónde puedo buscar??
+>
+no pistas,
+
+la idea es determinar qué ficheros van a casa paquete. Por esa razón mi 
+propuesta de compilar i instalar todo en opt i entonces ir haciendo un 
+desgrane de ficheros. Ésta lista de ficheros es la que determinará el 
+contenido de los ficheros .install del directorio debian.
+
+Por favor, puedes intentar compilar bulmages (normal, sin hacer el paquete) y 
+ir haciendo bloques de ficheros que corresponden a cada paquete?
+
+La duda que tengo (i Iker también) es qué poner en un paquete bulmages-admin o 
+algo parecido y en otro bulmages-common.
+
+Leo
+
+
+From shaola a esdebian.org  Tue Jun  1 17:07:27 2010
+From: shaola a esdebian.org (=?ISO-8859-1?Q?Iker_Salm=F3n_San_Mill=E1n?=)
+Date: Tue, 1 Jun 2010 17:07:27 +0200
+Subject: [Bulmages-pkg-debian] =?iso-8859-1?q?propuesta_de_paquetes_y_sepa?=
+	=?iso-8859-1?q?raci=F3n_de_archivos=2E?=
+Message-ID: <AANLkTikcyhNaoMKn2YIUKN5vLKIhFObMh2ipcrlP08kE@mail.gmail.com>
+
+Hola a todos, Leo en su día propuso agrupar ciertos paquetes para disminuir
+el número de paquetes, lo que me parece una idea acertada.  Esto es lo que
+propuso:
+
+  - bulmacont + bulmacont-plugins -> bulmacont
+   - bulmafact + bulmafact-plugins -> bulmafact
+   - bulmatpv + bulmatpv-plugins -> bulmatpv
+   - bulmages-servers + bulmages-admin -> bulmages-servers-admin
+   - bulmages -> bulmages-full (with the launcher)
+
+Bien, respecto a esto, he estado meditando y he llegado a alguna conclusión.
+Tenemos dos opciones claras, pero depende del funcionamiento del programa
+cual elegir.
+
+Primero: tanto bulmacont como bulmafact como bulmatpv, deberían incluir
+solamente los archivos necesarios para su funcionamiento
+
+
+Segundo,: Bulmages-servers-admin, debería poder instalarse el solo y
+funcionar sin requerimientos de otros paquetes.
+
+Con lo que se nos presentan tres posibilidades.
+A-  bulmacont, bulmafact y bulmatpv, necesitan que esté instalado
+bulmages-servers-admin para funcionar.  En cuyo caso, podemos meter todas
+las librerias comunes e incluso el launcher en bulmages-servers-admin  y
+dejar bulmages como metapaquete.
+
+B-  bulmacont, bulmafact y bulmatpv no requieren que esté instalado
+bulmages-servers-admin ya que este paquete está instalado en otra máquina de
+la red y actua como servidor.  En cuyo caso, deberíamos meter las librerias
+comunes y el launcher en bulmages (podemos cambiar el nombre), pero
+solamente las que no sean necesarias para bulmages-servers-admin porque si
+no entrarían en conflicto ambos paquetes.
+
+C- Podemos añadir otro paquete, que sería bulmages-common en el que se
+incluyan las librerias de todos los paquetes, incluido el
+bulmages-servers-admin y dejarlo como dependencia de todos ellos.  Esta
+última opción, no acaba de gustarme porque obliga a instalar en el servidor
+librerias que no se van a usar.
+
+D- Añadimos bulmages-common, pero solo le metemos las librerias de los tres
+programas de contabilidad y facturación, las librerias necesarias  para
+bulmages-servers-admin quedarían en su propio paquete para que se pueda
+instalar sin dependencias.
+
+Cada vez que le doy vueltas creo que vamos a necesitar un bulmages-common,
+pero eso depende de mi duda inicial, ¿puede por ejemplo bulmatpv trabajar
+sin bulmages-server-admin?  ¿conectandose por red? Si es así, yo optaría por
+la opción D.  Si por el contrario, es necesario tener instalado el servidor
+en el equipo (y que luego este se sincronice con otro servidor remoto) pues
+entonces optaría por la opción A.
+
+No se que opináis vosotros y si alguno puede aclararme mi duda inicial.  En
+todo caso, creo que bulmages debería ser un metapaquete que instale todo de
+golpe.
+
+Saludos a todos:
+
+P.S.  Otiolio: no hay ningún error en el rules aunque el mensaje de error te
+diga que está allí.  El único problema es que no estan definidos los
+archivos que van en cada paquete en su respectivo archivo. Si lees los
+mensajes anteriores al error te darás cuenta.
+-------------- part següent --------------
+Un document HTML ha estat eliminat...
+URL: <https://lists.berlios.de/pipermail/bulmages-pkg-debian/attachments/20100601/d7bb854d/attachment.html>
+
+From tborras a conetxia.com  Tue Jun  1 21:34:36 2010
+From: tborras a conetxia.com (Tomeu)
+Date: Tue, 1 Jun 2010 21:34:36 +0200
+Subject: [Bulmages-pkg-debian]
+ =?iso-8859-1?q?propuesta_de_paquetes_y_sepa?=
+ =?iso-8859-1?q?raci=F3n_de_archivos=2E?=
+In-Reply-To: <AANLkTikcyhNaoMKn2YIUKN5vLKIhFObMh2ipcrlP08kE@mail.gmail.com>
+References: <AANLkTikcyhNaoMKn2YIUKN5vLKIhFObMh2ipcrlP08kE@mail.gmail.com>
+Message-ID: <201006012134.36888.tborras@conetxia.com>
+
+Buenas
+
+Yo creo que no hay ninguna interrelación entre bulmages-servers-admin y los 
+demás.
+
+Si no me equivoco en bulmages-servers-admin debe llevar los archivos de base 
+de datos y de actualizaciones, los archivos de texto y de descripción y el 
+bulmasetup que está escrito en python y no tiene ninguna dependencia con este.
+De esta forma no hace falta un bulmages-common y queda todo funcional y con 
+las dependencias mejor definidas para una parte y para la otra.
+
+La única salvedad (y no tiene solución si la base de datos está en un 
+ordenador aparte de los clientes) es que bulmasetup escribe los archivos 
+/etc/bulmages/ que luego utilizan los clientes y habría que copiar dichos 
+archivos en los ordenadores cliente. Pero como ya he dicho no tiene fácil 
+solucion en sistemas con ordenadores separados.
+
+Salut
+
+
+
+> Hola a todos, Leo en su día propuso agrupar ciertos paquetes para disminuir
+> el número de paquetes, lo que me parece una idea acertada.  Esto es lo que
+> propuso:
+> 
+>   - bulmacont + bulmacont-plugins -> bulmacont
+>    - bulmafact + bulmafact-plugins -> bulmafact
+>    - bulmatpv + bulmatpv-plugins -> bulmatpv
+>    - bulmages-servers + bulmages-admin -> bulmages-servers-admin
+>    - bulmages -> bulmages-full (with the launcher)
+> 
+> Bien, respecto a esto, he estado meditando y he llegado a alguna
+>  conclusión. Tenemos dos opciones claras, pero depende del funcionamiento
+>  del programa cual elegir.
+> 
+> Primero: tanto bulmacont como bulmafact como bulmatpv, deberían incluir
+> solamente los archivos necesarios para su funcionamiento
+> 
+> 
+> Segundo,: Bulmages-servers-admin, debería poder instalarse el solo y
+> funcionar sin requerimientos de otros paquetes.
+> 
+> Con lo que se nos presentan tres posibilidades.
+> A-  bulmacont, bulmafact y bulmatpv, necesitan que esté instalado
+> bulmages-servers-admin para funcionar.  En cuyo caso, podemos meter todas
+> las librerias comunes e incluso el launcher en bulmages-servers-admin  y
+> dejar bulmages como metapaquete.
+> 
+> B-  bulmacont, bulmafact y bulmatpv no requieren que esté instalado
+> bulmages-servers-admin ya que este paquete está instalado en otra máquina
+>  de la red y actua como servidor.  En cuyo caso, deberíamos meter las
+>  librerias comunes y el launcher en bulmages (podemos cambiar el nombre),
+>  pero solamente las que no sean necesarias para bulmages-servers-admin
+>  porque si no entrarían en conflicto ambos paquetes.
+> 
+> C- Podemos añadir otro paquete, que sería bulmages-common en el que se
+> incluyan las librerias de todos los paquetes, incluido el
+> bulmages-servers-admin y dejarlo como dependencia de todos ellos.  Esta
+> última opción, no acaba de gustarme porque obliga a instalar en el servidor
+> librerias que no se van a usar.
+> 
+> D- Añadimos bulmages-common, pero solo le metemos las librerias de los tres
+> programas de contabilidad y facturación, las librerias necesarias  para
+> bulmages-servers-admin quedarían en su propio paquete para que se pueda
+> instalar sin dependencias.
+> 
+> Cada vez que le doy vueltas creo que vamos a necesitar un bulmages-common,
+> pero eso depende de mi duda inicial, ¿puede por ejemplo bulmatpv trabajar
+> sin bulmages-server-admin?  ¿conectandose por red? Si es así, yo optaría
+>  por la opción D.  Si por el contrario, es necesario tener instalado el
+>  servidor en el equipo (y que luego este se sincronice con otro servidor
+>  remoto) pues entonces optaría por la opción A.
+> 
+> No se que opináis vosotros y si alguno puede aclararme mi duda inicial.  En
+> todo caso, creo que bulmages debería ser un metapaquete que instale todo de
+> golpe.
+> 
+> Saludos a todos:
+> 
+> P.S.  Otiolio: no hay ningún error en el rules aunque el mensaje de error
+>  te diga que está allí.  El único problema es que no estan definidos los
+>  archivos que van en cada paquete en su respectivo archivo. Si lees los
+>  mensajes anteriores al error te darás cuenta.
+> "
+
+
+From otilio a apdo.com  Tue Jun  1 22:37:33 2010
+From: otilio a apdo.com (Otilio)
+Date: Tue, 01 Jun 2010 22:37:33 +0200
+Subject: [Bulmages-pkg-debian] Este no consigo solucionarlo
+In-Reply-To: <201006011557.48933.leo@alaxarxa.net>
+References: <4C050F2D.5020307@apdo.com> <201006011557.48933.leo@alaxarxa.net>
+Message-ID: <4C056F8D.5030403@apdo.com>
+
+El 01/06/10 15:57, Leopold Palomo-Avellaneda escribió:
+> A Dimarts 01 Juny 2010, Otilio va escriure:
+>> dpkg-shlibdeps: error: no dependency information found for
+>> /usr/local/lib/libbulmages.so.0.12 (used by
+>> debian/bulmages/usr/bin/bulmages).
+>> dh_shlibdeps: dpkg-shlibdeps -Tdebian/bulmages.substvars
+>> debian/bulmages/usr/bin/bulmages returned exit code 2
+>> make: *** [binary-arch] Error 9
+>> dpkg-buildpackage: error: fakeroot debian/rules binary gave error exit
+>> status 2
+>>
+>> Como se puede apreciar intenta buscar las librerías en /usr/local y da
+>> el error, a pesar de que el cmake tiene especificado que la instalación
+>> es en /usr.
+>> Me he quedado atascado ahí, lo siento, no encuentro la solución a esto.
+>> Alguna pista de dónde puedo buscar??
+>>
+> no pistas,
+>
+> la idea es determinar qué ficheros van a casa paquete. Por esa razón mi
+> propuesta de compilar i instalar todo en opt i entonces ir haciendo un
+> desgrane de ficheros. Ésta lista de ficheros es la que determinará el
+> contenido de los ficheros .install del directorio debian.
+Ahh, ok, me estaba yendo por los cerros de Ubeda que dicen por aquí.
+>
+> Por favor, puedes intentar compilar bulmages (normal, sin hacer el paquete) y
+> ir haciendo bloques de ficheros que corresponden a cada paquete?
+Sin problemas.
+>
+> La duda que tengo (i Iker también) es qué poner en un paquete bulmages-admin o
+> algo parecido y en otro bulmages-common.
+Supongo que el bulmages-common debería contener las librerías básicas y 
+el admin el bulmasetup no?
+Desde mi punto de vista, habría que hacerlos de tal forma que al 
+instalar el bulmafact, bulmacont y bulmatpv, te instale bulmages-common 
+como dependencia con las librerías básicas y al instalar bulmages-admin 
+te instale bulmasetup, postgres, y lo que necesite, diferenciando así 
+una instalación en servidor y otras en clientes, donde no sería 
+necesario instalar el motor de base de datos y eso.
+Y también se podría hacer un metapaquete bulmages que instale todo.
+>
+> Leo
+> _______________________________________________
+> Bulmages-pkg-debian mailing list
+> Bulmages-pkg-debian a lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+
+
+From otilio a apdo.com  Tue Jun  1 22:48:08 2010
+From: otilio a apdo.com (Otilio)
+Date: Tue, 01 Jun 2010 22:48:08 +0200
+Subject: [Bulmages-pkg-debian]
+ =?utf-8?q?propuesta_de_paquetes_y_separaci?=
+ =?utf-8?q?=C3=B3n_de_archivos=2E?=
+In-Reply-To: <201006012134.36888.tborras@conetxia.com>
+References: <AANLkTikcyhNaoMKn2YIUKN5vLKIhFObMh2ipcrlP08kE@mail.gmail.com>
+	<201006012134.36888.tborras@conetxia.com>
+Message-ID: <4C057208.4050905@apdo.com>
+
+
+
+El 01/06/10 21:34, Tomeu escribió:
+> Buenas
+>
+> Yo creo que no hay ninguna interrelación entre bulmages-servers-admin y los
+> demás.
+>
+> Si no me equivoco en bulmages-servers-admin debe llevar los archivos de base
+> de datos y de actualizaciones, los archivos de texto y de descripción y el
+> bulmasetup que está escrito en python y no tiene ninguna dependencia con este.
+> De esta forma no hace falta un bulmages-common y queda todo funcional y con
+> las dependencias mejor definidas para una parte y para la otra.
+>
+> La única salvedad (y no tiene solución si la base de datos está en un
+> ordenador aparte de los clientes) es que bulmasetup escribe los archivos
+> /etc/bulmages/ que luego utilizan los clientes y habría que copiar dichos
+> archivos en los ordenadores cliente. Pero como ya he dicho no tiene fácil
+> solucion en sistemas con ordenadores separados.
+
+Si no me equivoco se cotemplan una serie de archivos de configuración en 
+los home (.bulmages) por cada usuario no?
+No se podría mecanizar de alguna forma una configuración por usuario, 
+donde se pueda definir la dirección de la base de datos y los plugins 
+usados?
+>
+> Salut
+>
+>
+>
+>> Hola a todos, Leo en su día propuso agrupar ciertos paquetes para disminuir
+>> el número de paquetes, lo que me parece una idea acertada.  Esto es lo que
+>> propuso:
+>>
+>>    - bulmacont + bulmacont-plugins ->  bulmacont
+>>     - bulmafact + bulmafact-plugins ->  bulmafact
+>>     - bulmatpv + bulmatpv-plugins ->  bulmatpv
+>>     - bulmages-servers + bulmages-admin ->  bulmages-servers-admin
+>>     - bulmages ->  bulmages-full (with the launcher)
+>>
+>> Bien, respecto a esto, he estado meditando y he llegado a alguna
+>>   conclusión. Tenemos dos opciones claras, pero depende del funcionamiento
+>>   del programa cual elegir.
+>>
+>> Primero: tanto bulmacont como bulmafact como bulmatpv, deberían incluir
+>> solamente los archivos necesarios para su funcionamiento
+>>
+>>
+>> Segundo,: Bulmages-servers-admin, debería poder instalarse el solo y
+>> funcionar sin requerimientos de otros paquetes.
+>>
+>> Con lo que se nos presentan tres posibilidades.
+>> A-  bulmacont, bulmafact y bulmatpv, necesitan que esté instalado
+>> bulmages-servers-admin para funcionar.  En cuyo caso, podemos meter todas
+>> las librerias comunes e incluso el launcher en bulmages-servers-admin  y
+>> dejar bulmages como metapaquete.
+>>
+>> B-  bulmacont, bulmafact y bulmatpv no requieren que esté instalado
+>> bulmages-servers-admin ya que este paquete está instalado en otra máquina
+>>   de la red y actua como servidor.  En cuyo caso, deberíamos meter las
+>>   librerias comunes y el launcher en bulmages (podemos cambiar el nombre),
+>>   pero solamente las que no sean necesarias para bulmages-servers-admin
+>>   porque si no entrarían en conflicto ambos paquetes.
+>>
+>> C- Podemos añadir otro paquete, que sería bulmages-common en el que se
+>> incluyan las librerias de todos los paquetes, incluido el
+>> bulmages-servers-admin y dejarlo como dependencia de todos ellos.  Esta
+>> última opción, no acaba de gustarme porque obliga a instalar en el servidor
+>> librerias que no se van a usar.
+>>
+>> D- Añadimos bulmages-common, pero solo le metemos las librerias de los tres
+>> programas de contabilidad y facturación, las librerias necesarias  para
+>> bulmages-servers-admin quedarían en su propio paquete para que se pueda
+>> instalar sin dependencias.
+>>
+>> Cada vez que le doy vueltas creo que vamos a necesitar un bulmages-common,
+>> pero eso depende de mi duda inicial, ¿puede por ejemplo bulmatpv trabajar
+>> sin bulmages-server-admin?  ¿conectandose por red? Si es así, yo optaría
+>>   por la opción D.  Si por el contrario, es necesario tener instalado el
+>>   servidor en el equipo (y que luego este se sincronice con otro servidor
+>>   remoto) pues entonces optaría por la opción A.
+>>
+>> No se que opináis vosotros y si alguno puede aclararme mi duda inicial.  En
+>> todo caso, creo que bulmages debería ser un metapaquete que instale todo de
+>> golpe.
+>>
+>> Saludos a todos:
+>>
+>> P.S.  Otiolio: no hay ningún error en el rules aunque el mensaje de error
+>>   te diga que está allí.  El único problema es que no estan definidos los
+>>   archivos que van en cada paquete en su respectivo archivo. Si lees los
+>>   mensajes anteriores al error te darás cuenta
+
+Ya, ahora me doy cuenta de muchas cosas, jejeje
+
+>> "
+> _______________________________________________
+> Bulmages-pkg-debian mailing list
+> Bulmages-pkg-debian a lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian
+
+
+From tborras a conetxia.com  Wed Jun  2 00:45:32 2010
+From: tborras a conetxia.com (Tomeu)
+Date: Wed, 2 Jun 2010 00:45:32 +0200
+Subject: [Bulmages-pkg-debian]
+ =?iso-8859-1?q?propuesta_de_paquetes_y_sepa?=
+ =?iso-8859-1?q?raci=F3n_de_archivos=2E?=
+In-Reply-To: <4C057208.4050905@apdo.com>
+References: <AANLkTikcyhNaoMKn2YIUKN5vLKIhFObMh2ipcrlP08kE@mail.gmail.com>
+	<201006012134.36888.tborras@conetxia.com>
+	<4C057208.4050905@apdo.com>
+Message-ID: <201006020045.33290.tborras@conetxia.com>
+
+
+> Si no me equivoco se cotemplan una serie de archivos de configuración en
+> los home (.bulmages) por cada usuario no?
+> No se podría mecanizar de alguna forma una configuración por usuario,
+> donde se pueda definir la dirección de la base de datos y los plugins
+> usados?
+> 
+
+El problema es que son ordenadores distintos y hay que presuponer muchas cosas 
+al ejecutar desde el servidor.
+
+1.- Si quieres traspasar los archivos por ssh tienes que saber las direcciones 
+de cada cliente y las claves de acceso.
+
+2.- Si quieres que el cliente acceda al servidor tb tienes que tener ip y 
+claves de acceso.
+
+Eso suponiento que el ssh esta habilitado que puede no ser así.
+
+Total que para lo que es y las complicaciones que trae mejor explicar 
+claramente que las configuraciones deben copiarse de un lugar a otro y listos.
+
+Viene a ser el caso similar a la configuracion de una VPN donde debes generar 
+las claves en el servidor y traspasarlas a cada cliente. O a la 
+autentificacion mecanizada del ssh donde tienes que generar la clave y 
+copiarla. 
+
+Es cuestión de explicar bien y tener bien visible como se hace más que darle 
+una solución programada al problema.
+
+Salut
+
+
+From shaola a esdebian.org  Sat Jun  5 00:05:01 2010
+From: shaola a esdebian.org (=?ISO-8859-1?Q?Iker_Salm=F3n_San_Mill=E1n?=)
+Date: Sat, 5 Jun 2010 00:05:01 +0200
+Subject: [Bulmages-pkg-debian] lista la primera hornada de paquetes para
+	debian
+Message-ID: <AANLkTinjTJGW8L6wWlQd8D7MKzSLkp0-tYVTcA6cT5G4@mail.gmail.com>
+
+Hola,
+
+Pues eso, que por fin he conseguido construir los paquetes.  Eso sí, no os
+hagáis ilusiones, aún queda mucho trabajo por hacer.
+Para empezar, no se si he metido cada archivo donde corresponde, y además he
+tenido varios warnings durante la construcción de los paquetes.  Esos
+warnings estan relacionados con los plugins  y CREO que se pueden ignorar
+por el propio mensaje "it's probably a plugin". pero no sé, lo mejor es que
+los ponga:
+
+dpkg-shlibdeps: warning:
+debian/bulmacont/usr/lib/bulmacont/plugins/libpluginbc_cuentasanuales.so.0.12.0
+contains an unresolvable reference to symbol
+_ZN19BcPlanContableArbol14actualizaHojasEP13BlDbRecordSet: it's probably a
+plugin.
+dpkg-shlibdeps: warning: 6 other similar warnings have been skipped (use -v
+to see them all).
+dpkg-shlibdeps: warning:
+debian/bulmacont/usr/lib/bulmacont/plugins/libpluginbc_corrector.so.0.12.0
+contains an unresolvable reference to symbol
+_ZN13BcAsientoView14muestraasientoEi: it's probably a plugin.
+dpkg-shlibdeps: warning: 1 other similar warnings have been skipped (use -v
+to see them all).
+dpkg-shlibdeps: warning:
+debian/bulmacont/usr/lib/bulmacont/plugins/libpluginbc_duplicarasiento.so.0.12.0
+contains an unresolvable reference to symbol
+_ZN13BcAsientoList13cargaasientosEv: it's probably a plugin.
+dpkg-shlibdeps: warning: 1 other similar warnings have been skipped (use -v
+to see them all).
+dpkg-shlibdeps: warning:
+debian/bulmacont/usr/lib/bulmacont/plugins/libpluginbc_balance.so.0.12.0
+contains an unresolvable reference to symbol _ZN19BcPlanContableArbolC1Ev:
+it's probably a plugin.
+dpkg-shlibdeps: warning: 7 other similar warnings have been skipped (use -v
+to see them all).
+dpkg-shlibdeps: warning:
+debian/bulmacont/usr/lib/bulmacont/plugins/libpluginbc_cuentaresumen.so.0.12.0
+contains an unresolvable reference to symbol
+_ZN13BcAsientoView14muestraasientoEi: it's probably a plugin.
+dpkg-shlibdeps: warning: 1 other similar warnings have been skipped (use -v
+to see them all).
+dpkg-shlibdeps: warning:
+debian/bulmacont/usr/lib/bulmacont/plugins/libpluginbc_amortizacion.so.0.12.0
+contains an unresolvable reference to symbol
+_ZN24BcAsientoInteligenteViewC1EP9BcCompanyP7QWidget: it's probably a
+plugin.
+dpkg-shlibdeps: warning: 6 other similar warnings have been skipped (use -v
+to see them all).
+dpkg-shlibdeps: warning:
+debian/bulmafact/usr/lib/bulmafact/plugins/libpluginbf_proveedorfactura.so.0.12.0
+contains an unresolvable reference to symbol
+_ZN20AlbaranProveedorViewC1EP9BfCompanyP7QWidget: it's probably a plugin.
+dpkg-shlibdeps: warning:
+debian/bulmafact/usr/lib/bulmafact/plugins/libpluginbf_clientefactura.so.0.12.0
+contains an unresolvable reference to symbol
+_ZN18AlbaranClienteList14idCliDelivNoteEv: it's probably a plugin.
+dpkg-shlibdeps: warning: 2 other similar warnings have been skipped (use -v
+to see them all).
+dpkg-shlibdeps: warning:
+debian/bulmafact/usr/lib/bulmafact/plugins/libpluginbf_abrecodigobarras.so.0.12.0
+contains an unresolvable reference to symbol
+_ZN19PedidoProveedorViewC1EP9BfCompanyP7QWidget: it's probably a plugin.
+dpkg-shlibdeps: warning:
+debian/bulmafact/usr/lib/bulmafact/plugins/libpluginbf_catalogo.so.0.12.0
+contains an unresolvable reference to symbol
+_ZN12ArticuloList10formaQueryEv: it's probably a plugin.
+dpkg-shlibdeps: warning:
+debian/bulmafact/usr/lib/bulmafact/plugins/libpluginbf_contrato.so.0.12.0
+contains an unresolvable reference to symbol
+_ZN11FacturaViewC1EP9BfCompanyP7QWidget: it's probably a plugin.
+dpkg-shlibdeps: warning:
+debian/bulmafact/usr/lib/bulmafact/plugins/libpluginbf_multiimprimir.so.0.12.0
+contains an unresolvable reference to symbol
+_ZN9CobroViewC1EP9BfCompanyP7QWidget: it's probably a plugin.
+dpkg-shlibdeps: warning:
+debian/bulmafact/usr/lib/bulmafact/plugins/libpluginbf_proveedoralbaran.so.0.12.0
+contains an unresolvable reference to symbol
+_ZN19PedidoProveedorViewC1EP9BfCompanyP7QWidget: it's probably a plugin.
+dpkg-shlibdeps: warning:
+debian/bulmafact/usr/lib/bulmafact/plugins/libpluginbf_compraventa.so.0.12.0
+contains an unresolvable reference to symbol
+_ZN20FacturaProveedorViewC1EP9BfCompanyP7QWidget: it's probably a plugin.
+dpkg-shlibdeps: warning: 2 other similar warnings have been skipped (use -v
+to see them all).
+
+
+Otra cosa es que he necesitado exportar LD_LIBRARY_PATH para los directorios
+de plugins de bulmafact y bulmacont, porque no he sido capaz de incluirlos
+en el archivo rules, se supone que con el parámetro -l puedo hacerlo con
+dh_shlibdeps, pero no se si he metido la ruta mal o que.  No acabo de
+vislumbrar en el man la forma correcta de hacerlo en el rules.  Tampoco he
+probado todas las posibilidades con las rutas parciales o completas, pero
+como me ha funcionado exportandolo y tengo los ojos llorosos ya de leer, lo
+he dejado para otro día.
+
+Creo que como tomeu me ha añadido al subversión podría subir os cambios que
+he tenido que hacer para que se construya bien los paquetes, pero
+sinceramente no me atrevo a hacerlo aún.  Me falta confianza.  Además, antes
+de hacerlo quisiera terminar con las cosas pendientes que quedan por
+discutir:
+
+Voy a intentar sintetizar todo para que quede clarito.
+
+Definitivamente nos quedan cinco paquetes:  bulmages, bulmafact, bulmacont,
+bulmatpv y bulmages-servers-admin
+La idea que tengo, que no se si es la más correcta, es esta:
+
+En cada paquete van las cosas propias de sí mismos (bulmafact, bulmatpv,
+bulmacont y bulmages-servers-admin) salvo en bulmages, que he metido lo que
+creo que era de bulmalib y de bulmages-common y también la documentación.
+Con lo que creo que bulmafact, bulmatpv y bulmacont dependen de ese paquete
+también, por lo que lo he añadido como dependencia (antes tenían como
+dependencia bulmages-common).
+
+La idea es que bulmages-servers-admin pueda funcionar por si mismo sin otras
+dependencias.
+
+La duda que me queda es si hacer o no un paquete solo para la documentación.
+Ya me contaréis.
+
+Cosas pendientes:
+
+1- Confirmar la separación de los paquetes tal y como lo he planteado.
+
+2- Verificar que no haya metido la pata a la hora de separar los archivos,
+ya que no me se la función de cada uno.  Me he limitado a deducirlo por el
+nombre y ruta de cada archivo.  Lo único que tengo claro es que los que he
+metido en bulmafact, bulmacont y bulmatpv están bien, ya que se identifican
+muy bien.  Creo que puede haber problemas con los otros dos (además estaba
+ya muy cansado cuando los puse y probé mil cosas porque no conseguía crear
+el paquete).  No quiero incordiar a Tomeu, pero creo que él sería el más
+adecuado para comprobar ese listado.
+
+3- Decidir si metemos la documentación en bulmages también o creamos un
+bulmages-doc.
+
+4- Decidir la versión que será el paquete.  Creo que nombrarlo como una
+versión + subversión no es lo más adecuado para pensar en que llegue a
+estable.  ¿Sería posible liberar una especie de postversion ya que ahora ya
+no quedan dependencias de las qt3?
+
+5- modificar el rules para no tener que exportar la variable de las rutas y
+que sea más sencilla la construcción de los paquetes.
+
+Aunque la congelación de squeeze está muy cerca y es prácticamente imposible
+que consigamos que entre a tiempo, aún hay una pequeña posibilidad.
+
+Como sé que todo el mundo pone de su parte y muchos no tienen casi tiempo no
+voy a pedirle a nadie un esfuerzo.  Pero yo tengo tiempo disponible y muchas
+ganas, con una pequeña ayudita inicial puedo tener los paquetes listos en
+pocos días.
+
+Un saludo a todos y ánimo.
+
+P.S.  Creo que no me dejo nada en el tintero, estoy bastante cansado y ya no
+pienso con claridad, pero después de ver los paquetes en formato deb me
+siento renovado y feliz.  Gracias a todos por la oportunidad de aprendizaje
+que me habéis brindado.
+-------------- part següent --------------
+Un document HTML ha estat eliminat...
+URL: <https://lists.berlios.de/pipermail/bulmages-pkg-debian/attachments/20100605/9aafe16a/attachment.html>
+

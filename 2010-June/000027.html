@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Bulmages-pkg-debian] Este no consigo solucionarlo
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/bulmages-pkg-debian/2010-June/index.html" >
+   <LINK REL="made" HREF="mailto:bulmages-pkg-debian%40lists.berlios.de?Subject=Re%3A%20%5BBulmages-pkg-debian%5D%20Este%20no%20consigo%20solucionarlo&In-Reply-To=%3C201006011557.48933.leo%40alaxarxa.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <LINK REL="Previous"  HREF="000026.html">
+   <LINK REL="Next"  HREF="000030.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Bulmages-pkg-debian] Este no consigo solucionarlo</H1>
+    <B>Leopold Palomo-Avellaneda</B> 
+    <A HREF="mailto:bulmages-pkg-debian%40lists.berlios.de?Subject=Re%3A%20%5BBulmages-pkg-debian%5D%20Este%20no%20consigo%20solucionarlo&In-Reply-To=%3C201006011557.48933.leo%40alaxarxa.net%3E"
+       TITLE="[Bulmages-pkg-debian] Este no consigo solucionarlo">leo a alaxarxa.net
+       </A><BR>
+    <I>dim jun  1 15:57:48 CEST 2010</I>
+    <P><UL>
+        <LI>Missatge anterior: <A HREF="000026.html">[Bulmages-pkg-debian] Este no consigo solucionarlo
+</A></li>
+        <LI>Missatge següent: <A HREF="000030.html">[Bulmages-pkg-debian] Este no consigo solucionarlo
+</A></li>
+         <LI> <B>Missatges ordenats per:</B> 
+              <a href="date.html#27">[ data ]</a>
+              <a href="thread.html#27">[ fil de discussi&oacute; ]</a>
+              <a href="subject.html#27">[ assumpte ]</a>
+              <a href="author.html#27">[ autor ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>A Dimarts 01 Juny 2010, Otilio va escriure:
+&gt;<i> dpkg-shlibdeps: error: no dependency information found for
+</I>&gt;<i> /usr/local/lib/libbulmages.so.0.12 (used by
+</I>&gt;<i> debian/bulmages/usr/bin/bulmages).
+</I>&gt;<i> dh_shlibdeps: dpkg-shlibdeps -Tdebian/bulmages.substvars
+</I>&gt;<i> debian/bulmages/usr/bin/bulmages returned exit code 2
+</I>&gt;<i> make: *** [binary-arch] Error 9
+</I>&gt;<i> dpkg-buildpackage: error: fakeroot debian/rules binary gave error exit
+</I>&gt;<i> status 2
+</I>&gt;<i>
+</I>&gt;<i> Como se puede apreciar intenta buscar las librerías en /usr/local y da
+</I>&gt;<i> el error, a pesar de que el cmake tiene especificado que la instalación
+</I>&gt;<i> es en /usr.
+</I>&gt;<i> Me he quedado atascado ahí, lo siento, no encuentro la solución a esto.
+</I>&gt;<i> Alguna pista de dónde puedo buscar??
+</I>&gt;<i>
+</I>no pistas,
+
+la idea es determinar qué ficheros van a casa paquete. Por esa razón mi 
+propuesta de compilar i instalar todo en opt i entonces ir haciendo un 
+desgrane de ficheros. Ésta lista de ficheros es la que determinará el 
+contenido de los ficheros .install del directorio debian.
+
+Por favor, puedes intentar compilar bulmages (normal, sin hacer el paquete) y 
+ir haciendo bloques de ficheros que corresponden a cada paquete?
+
+La duda que tengo (i Iker también) es qué poner en un paquete bulmages-admin o 
+algo parecido y en otro bulmages-common.
+
+Leo
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Missatge anterior: <A HREF="000026.html">[Bulmages-pkg-debian] Este no consigo solucionarlo
+</A></li>
+	<LI>Missatge següent: <A HREF="000030.html">[Bulmages-pkg-debian] Este no consigo solucionarlo
+</A></li>     
+         <LI> <B>Missatges ordenats per:</B> 
+              <a href="date.html#27">[ data ]</a>
+              <a href="thread.html#27">[ fil de discussi&oacute; ]</a>
+              <a href="subject.html#27">[ assumpte ]</a>
+              <a href="author.html#27">[ autor ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian">M&eacute;s informaci&oacute; sobre la llista de correu Bulmages-pkg-debian</a><br>
+
+</body></html>

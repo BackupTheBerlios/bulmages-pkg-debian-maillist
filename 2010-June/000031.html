@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Bulmages-pkg-debian] propuesta de paquetes y separación de archivos.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/bulmages-pkg-debian/2010-June/index.html" >
+   <LINK REL="made" HREF="mailto:bulmages-pkg-debian%40lists.berlios.de?Subject=Re%3A%20%5BBulmages-pkg-debian%5D%0A%20%3D%3Futf-8%3Fq%3Fpropuesta_de_paquetes_y_separaci%3F%3D%0A%20%3D%3Futf-8%3Fq%3F%3DC3%3DB3n_de_archivos%3D2E%3F%3D&In-Reply-To=%3C4C057208.4050905%40apdo.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <LINK REL="Previous"  HREF="000029.html">
+   <LINK REL="Next"  HREF="000032.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Bulmages-pkg-debian] propuesta de paquetes y separación de archivos.</H1>
+    <B>Otilio</B> 
+    <A HREF="mailto:bulmages-pkg-debian%40lists.berlios.de?Subject=Re%3A%20%5BBulmages-pkg-debian%5D%0A%20%3D%3Futf-8%3Fq%3Fpropuesta_de_paquetes_y_separaci%3F%3D%0A%20%3D%3Futf-8%3Fq%3F%3DC3%3DB3n_de_archivos%3D2E%3F%3D&In-Reply-To=%3C4C057208.4050905%40apdo.com%3E"
+       TITLE="[Bulmages-pkg-debian] propuesta de paquetes y separación de archivos.">otilio a apdo.com
+       </A><BR>
+    <I>dim jun  1 22:48:08 CEST 2010</I>
+    <P><UL>
+        <LI>Missatge anterior: <A HREF="000029.html">[Bulmages-pkg-debian] propuesta de paquetes y separación de archivos.
+</A></li>
+        <LI>Missatge següent: <A HREF="000032.html">[Bulmages-pkg-debian] propuesta de paquetes y separación de archivos.
+</A></li>
+         <LI> <B>Missatges ordenats per:</B> 
+              <a href="date.html#31">[ data ]</a>
+              <a href="thread.html#31">[ fil de discussi&oacute; ]</a>
+              <a href="subject.html#31">[ assumpte ]</a>
+              <a href="author.html#31">[ autor ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+
+El 01/06/10 21:34, Tomeu escribió:
+&gt;<i> Buenas
+</I>&gt;<i>
+</I>&gt;<i> Yo creo que no hay ninguna interrelación entre bulmages-servers-admin y los
+</I>&gt;<i> demás.
+</I>&gt;<i>
+</I>&gt;<i> Si no me equivoco en bulmages-servers-admin debe llevar los archivos de base
+</I>&gt;<i> de datos y de actualizaciones, los archivos de texto y de descripción y el
+</I>&gt;<i> bulmasetup que está escrito en python y no tiene ninguna dependencia con este.
+</I>&gt;<i> De esta forma no hace falta un bulmages-common y queda todo funcional y con
+</I>&gt;<i> las dependencias mejor definidas para una parte y para la otra.
+</I>&gt;<i>
+</I>&gt;<i> La única salvedad (y no tiene solución si la base de datos está en un
+</I>&gt;<i> ordenador aparte de los clientes) es que bulmasetup escribe los archivos
+</I>&gt;<i> /etc/bulmages/ que luego utilizan los clientes y habría que copiar dichos
+</I>&gt;<i> archivos en los ordenadores cliente. Pero como ya he dicho no tiene fácil
+</I>&gt;<i> solucion en sistemas con ordenadores separados.
+</I>
+Si no me equivoco se cotemplan una serie de archivos de configuración en 
+los home (.bulmages) por cada usuario no?
+No se podría mecanizar de alguna forma una configuración por usuario, 
+donde se pueda definir la dirección de la base de datos y los plugins 
+usados?
+&gt;<i>
+</I>&gt;<i> Salut
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i> Hola a todos, Leo en su día propuso agrupar ciertos paquetes para disminuir
+</I>&gt;&gt;<i> el número de paquetes, lo que me parece una idea acertada.  Esto es lo que
+</I>&gt;&gt;<i> propuso:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    - bulmacont + bulmacont-plugins -&gt;  bulmacont
+</I>&gt;&gt;<i>     - bulmafact + bulmafact-plugins -&gt;  bulmafact
+</I>&gt;&gt;<i>     - bulmatpv + bulmatpv-plugins -&gt;  bulmatpv
+</I>&gt;&gt;<i>     - bulmages-servers + bulmages-admin -&gt;  bulmages-servers-admin
+</I>&gt;&gt;<i>     - bulmages -&gt;  bulmages-full (with the launcher)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Bien, respecto a esto, he estado meditando y he llegado a alguna
+</I>&gt;&gt;<i>   conclusión. Tenemos dos opciones claras, pero depende del funcionamiento
+</I>&gt;&gt;<i>   del programa cual elegir.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Primero: tanto bulmacont como bulmafact como bulmatpv, deberían incluir
+</I>&gt;&gt;<i> solamente los archivos necesarios para su funcionamiento
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Segundo,: Bulmages-servers-admin, debería poder instalarse el solo y
+</I>&gt;&gt;<i> funcionar sin requerimientos de otros paquetes.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Con lo que se nos presentan tres posibilidades.
+</I>&gt;&gt;<i> A-  bulmacont, bulmafact y bulmatpv, necesitan que esté instalado
+</I>&gt;&gt;<i> bulmages-servers-admin para funcionar.  En cuyo caso, podemos meter todas
+</I>&gt;&gt;<i> las librerias comunes e incluso el launcher en bulmages-servers-admin  y
+</I>&gt;&gt;<i> dejar bulmages como metapaquete.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> B-  bulmacont, bulmafact y bulmatpv no requieren que esté instalado
+</I>&gt;&gt;<i> bulmages-servers-admin ya que este paquete está instalado en otra máquina
+</I>&gt;&gt;<i>   de la red y actua como servidor.  En cuyo caso, deberíamos meter las
+</I>&gt;&gt;<i>   librerias comunes y el launcher en bulmages (podemos cambiar el nombre),
+</I>&gt;&gt;<i>   pero solamente las que no sean necesarias para bulmages-servers-admin
+</I>&gt;&gt;<i>   porque si no entrarían en conflicto ambos paquetes.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> C- Podemos añadir otro paquete, que sería bulmages-common en el que se
+</I>&gt;&gt;<i> incluyan las librerias de todos los paquetes, incluido el
+</I>&gt;&gt;<i> bulmages-servers-admin y dejarlo como dependencia de todos ellos.  Esta
+</I>&gt;&gt;<i> última opción, no acaba de gustarme porque obliga a instalar en el servidor
+</I>&gt;&gt;<i> librerias que no se van a usar.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> D- Añadimos bulmages-common, pero solo le metemos las librerias de los tres
+</I>&gt;&gt;<i> programas de contabilidad y facturación, las librerias necesarias  para
+</I>&gt;&gt;<i> bulmages-servers-admin quedarían en su propio paquete para que se pueda
+</I>&gt;&gt;<i> instalar sin dependencias.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Cada vez que le doy vueltas creo que vamos a necesitar un bulmages-common,
+</I>&gt;&gt;<i> pero eso depende de mi duda inicial, ¿puede por ejemplo bulmatpv trabajar
+</I>&gt;&gt;<i> sin bulmages-server-admin?  ¿conectandose por red? Si es así, yo optaría
+</I>&gt;&gt;<i>   por la opción D.  Si por el contrario, es necesario tener instalado el
+</I>&gt;&gt;<i>   servidor en el equipo (y que luego este se sincronice con otro servidor
+</I>&gt;&gt;<i>   remoto) pues entonces optaría por la opción A.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> No se que opináis vosotros y si alguno puede aclararme mi duda inicial.  En
+</I>&gt;&gt;<i> todo caso, creo que bulmages debería ser un metapaquete que instale todo de
+</I>&gt;&gt;<i> golpe.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Saludos a todos:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> P.S.  Otiolio: no hay ningún error en el rules aunque el mensaje de error
+</I>&gt;&gt;<i>   te diga que está allí.  El único problema es que no estan definidos los
+</I>&gt;&gt;<i>   archivos que van en cada paquete en su respectivo archivo. Si lees los
+</I>&gt;&gt;<i>   mensajes anteriores al error te darás cuenta
+</I>
+Ya, ahora me doy cuenta de muchas cosas, jejeje
+
+&gt;&gt;<i> &quot;
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Bulmages-pkg-debian mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian">Bulmages-pkg-debian a lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian">https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Missatge anterior: <A HREF="000029.html">[Bulmages-pkg-debian] propuesta de paquetes y separación de archivos.
+</A></li>
+	<LI>Missatge següent: <A HREF="000032.html">[Bulmages-pkg-debian] propuesta de paquetes y separación de archivos.
+</A></li>     
+         <LI> <B>Missatges ordenats per:</B> 
+              <a href="date.html#31">[ data ]</a>
+              <a href="thread.html#31">[ fil de discussi&oacute; ]</a>
+              <a href="subject.html#31">[ assumpte ]</a>
+              <a href="author.html#31">[ autor ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian">M&eacute;s informaci&oacute; sobre la llista de correu Bulmages-pkg-debian</a><br>
+
+</body></html>

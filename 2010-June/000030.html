@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Bulmages-pkg-debian] Este no consigo solucionarlo
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/bulmages-pkg-debian/2010-June/index.html" >
+   <LINK REL="made" HREF="mailto:bulmages-pkg-debian%40lists.berlios.de?Subject=Re%3A%20%5BBulmages-pkg-debian%5D%20Este%20no%20consigo%20solucionarlo&In-Reply-To=%3C4C056F8D.5030403%40apdo.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <LINK REL="Previous"  HREF="000027.html">
+   <LINK REL="Next"  HREF="000028.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Bulmages-pkg-debian] Este no consigo solucionarlo</H1>
+    <B>Otilio</B> 
+    <A HREF="mailto:bulmages-pkg-debian%40lists.berlios.de?Subject=Re%3A%20%5BBulmages-pkg-debian%5D%20Este%20no%20consigo%20solucionarlo&In-Reply-To=%3C4C056F8D.5030403%40apdo.com%3E"
+       TITLE="[Bulmages-pkg-debian] Este no consigo solucionarlo">otilio a apdo.com
+       </A><BR>
+    <I>dim jun  1 22:37:33 CEST 2010</I>
+    <P><UL>
+        <LI>Missatge anterior: <A HREF="000027.html">[Bulmages-pkg-debian] Este no consigo solucionarlo
+</A></li>
+        <LI>Missatge següent: <A HREF="000028.html">[Bulmages-pkg-debian] propuesta de paquetes y separación de archivos.
+</A></li>
+         <LI> <B>Missatges ordenats per:</B> 
+              <a href="date.html#30">[ data ]</a>
+              <a href="thread.html#30">[ fil de discussi&oacute; ]</a>
+              <a href="subject.html#30">[ assumpte ]</a>
+              <a href="author.html#30">[ autor ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>El 01/06/10 15:57, Leopold Palomo-Avellaneda escribió:
+&gt;<i> A Dimarts 01 Juny 2010, Otilio va escriure:
+</I>&gt;&gt;<i> dpkg-shlibdeps: error: no dependency information found for
+</I>&gt;&gt;<i> /usr/local/lib/libbulmages.so.0.12 (used by
+</I>&gt;&gt;<i> debian/bulmages/usr/bin/bulmages).
+</I>&gt;&gt;<i> dh_shlibdeps: dpkg-shlibdeps -Tdebian/bulmages.substvars
+</I>&gt;&gt;<i> debian/bulmages/usr/bin/bulmages returned exit code 2
+</I>&gt;&gt;<i> make: *** [binary-arch] Error 9
+</I>&gt;&gt;<i> dpkg-buildpackage: error: fakeroot debian/rules binary gave error exit
+</I>&gt;&gt;<i> status 2
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Como se puede apreciar intenta buscar las librerías en /usr/local y da
+</I>&gt;&gt;<i> el error, a pesar de que el cmake tiene especificado que la instalación
+</I>&gt;&gt;<i> es en /usr.
+</I>&gt;&gt;<i> Me he quedado atascado ahí, lo siento, no encuentro la solución a esto.
+</I>&gt;&gt;<i> Alguna pista de dónde puedo buscar??
+</I>&gt;&gt;<i>
+</I>&gt;<i> no pistas,
+</I>&gt;<i>
+</I>&gt;<i> la idea es determinar qué ficheros van a casa paquete. Por esa razón mi
+</I>&gt;<i> propuesta de compilar i instalar todo en opt i entonces ir haciendo un
+</I>&gt;<i> desgrane de ficheros. Ésta lista de ficheros es la que determinará el
+</I>&gt;<i> contenido de los ficheros .install del directorio debian.
+</I>Ahh, ok, me estaba yendo por los cerros de Ubeda que dicen por aquí.
+&gt;<i>
+</I>&gt;<i> Por favor, puedes intentar compilar bulmages (normal, sin hacer el paquete) y
+</I>&gt;<i> ir haciendo bloques de ficheros que corresponden a cada paquete?
+</I>Sin problemas.
+&gt;<i>
+</I>&gt;<i> La duda que tengo (i Iker también) es qué poner en un paquete bulmages-admin o
+</I>&gt;<i> algo parecido y en otro bulmages-common.
+</I>Supongo que el bulmages-common debería contener las librerías básicas y 
+el admin el bulmasetup no?
+Desde mi punto de vista, habría que hacerlos de tal forma que al 
+instalar el bulmafact, bulmacont y bulmatpv, te instale bulmages-common 
+como dependencia con las librerías básicas y al instalar bulmages-admin 
+te instale bulmasetup, postgres, y lo que necesite, diferenciando así 
+una instalación en servidor y otras en clientes, donde no sería 
+necesario instalar el motor de base de datos y eso.
+Y también se podría hacer un metapaquete bulmages que instale todo.
+&gt;<i>
+</I>&gt;<i> Leo
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Bulmages-pkg-debian mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian">Bulmages-pkg-debian a lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian">https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Missatge anterior: <A HREF="000027.html">[Bulmages-pkg-debian] Este no consigo solucionarlo
+</A></li>
+	<LI>Missatge següent: <A HREF="000028.html">[Bulmages-pkg-debian] propuesta de paquetes y separación de archivos.
+</A></li>     
+         <LI> <B>Missatges ordenats per:</B> 
+              <a href="date.html#30">[ data ]</a>
+              <a href="thread.html#30">[ fil de discussi&oacute; ]</a>
+              <a href="subject.html#30">[ assumpte ]</a>
+              <a href="author.html#30">[ autor ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian">M&eacute;s informaci&oacute; sobre la llista de correu Bulmages-pkg-debian</a><br>
+
+</body></html>

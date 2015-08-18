@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Bulmages-pkg-debian] propuesta de paquetes y separación de archivos.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/bulmages-pkg-debian/2010-June/index.html" >
+   <LINK REL="made" HREF="mailto:bulmages-pkg-debian%40lists.berlios.de?Subject=Re%3A%20%5BBulmages-pkg-debian%5D%20%3D%3Fiso-8859-1%3Fq%3Fpropuesta_de_paquetes_y_sepa%3F%3D%0A%09%3D%3Fiso-8859-1%3Fq%3Fraci%3DF3n_de_archivos%3D2E%3F%3D&In-Reply-To=%3CAANLkTikcyhNaoMKn2YIUKN5vLKIhFObMh2ipcrlP08kE%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <LINK REL="Previous"  HREF="000030.html">
+   <LINK REL="Next"  HREF="000029.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Bulmages-pkg-debian] propuesta de paquetes y separación de archivos.</H1>
+    <B>Iker Salmón San Millán</B> 
+    <A HREF="mailto:bulmages-pkg-debian%40lists.berlios.de?Subject=Re%3A%20%5BBulmages-pkg-debian%5D%20%3D%3Fiso-8859-1%3Fq%3Fpropuesta_de_paquetes_y_sepa%3F%3D%0A%09%3D%3Fiso-8859-1%3Fq%3Fraci%3DF3n_de_archivos%3D2E%3F%3D&In-Reply-To=%3CAANLkTikcyhNaoMKn2YIUKN5vLKIhFObMh2ipcrlP08kE%40mail.gmail.com%3E"
+       TITLE="[Bulmages-pkg-debian] propuesta de paquetes y separación de archivos.">shaola a esdebian.org
+       </A><BR>
+    <I>dim jun  1 17:07:27 CEST 2010</I>
+    <P><UL>
+        <LI>Missatge anterior: <A HREF="000030.html">[Bulmages-pkg-debian] Este no consigo solucionarlo
+</A></li>
+        <LI>Missatge següent: <A HREF="000029.html">[Bulmages-pkg-debian] propuesta de paquetes y separación de archivos.
+</A></li>
+         <LI> <B>Missatges ordenats per:</B> 
+              <a href="date.html#28">[ data ]</a>
+              <a href="thread.html#28">[ fil de discussi&oacute; ]</a>
+              <a href="subject.html#28">[ assumpte ]</a>
+              <a href="author.html#28">[ autor ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hola a todos, Leo en su día propuso agrupar ciertos paquetes para disminuir
+el número de paquetes, lo que me parece una idea acertada.  Esto es lo que
+propuso:
+
+  - bulmacont + bulmacont-plugins -&gt; bulmacont
+   - bulmafact + bulmafact-plugins -&gt; bulmafact
+   - bulmatpv + bulmatpv-plugins -&gt; bulmatpv
+   - bulmages-servers + bulmages-admin -&gt; bulmages-servers-admin
+   - bulmages -&gt; bulmages-full (with the launcher)
+
+Bien, respecto a esto, he estado meditando y he llegado a alguna conclusión.
+Tenemos dos opciones claras, pero depende del funcionamiento del programa
+cual elegir.
+
+Primero: tanto bulmacont como bulmafact como bulmatpv, deberían incluir
+solamente los archivos necesarios para su funcionamiento
+
+
+Segundo,: Bulmages-servers-admin, debería poder instalarse el solo y
+funcionar sin requerimientos de otros paquetes.
+
+Con lo que se nos presentan tres posibilidades.
+A-  bulmacont, bulmafact y bulmatpv, necesitan que esté instalado
+bulmages-servers-admin para funcionar.  En cuyo caso, podemos meter todas
+las librerias comunes e incluso el launcher en bulmages-servers-admin  y
+dejar bulmages como metapaquete.
+
+B-  bulmacont, bulmafact y bulmatpv no requieren que esté instalado
+bulmages-servers-admin ya que este paquete está instalado en otra máquina de
+la red y actua como servidor.  En cuyo caso, deberíamos meter las librerias
+comunes y el launcher en bulmages (podemos cambiar el nombre), pero
+solamente las que no sean necesarias para bulmages-servers-admin porque si
+no entrarían en conflicto ambos paquetes.
+
+C- Podemos añadir otro paquete, que sería bulmages-common en el que se
+incluyan las librerias de todos los paquetes, incluido el
+bulmages-servers-admin y dejarlo como dependencia de todos ellos.  Esta
+última opción, no acaba de gustarme porque obliga a instalar en el servidor
+librerias que no se van a usar.
+
+D- Añadimos bulmages-common, pero solo le metemos las librerias de los tres
+programas de contabilidad y facturación, las librerias necesarias  para
+bulmages-servers-admin quedarían en su propio paquete para que se pueda
+instalar sin dependencias.
+
+Cada vez que le doy vueltas creo que vamos a necesitar un bulmages-common,
+pero eso depende de mi duda inicial, ¿puede por ejemplo bulmatpv trabajar
+sin bulmages-server-admin?  ¿conectandose por red? Si es así, yo optaría por
+la opción D.  Si por el contrario, es necesario tener instalado el servidor
+en el equipo (y que luego este se sincronice con otro servidor remoto) pues
+entonces optaría por la opción A.
+
+No se que opináis vosotros y si alguno puede aclararme mi duda inicial.  En
+todo caso, creo que bulmages debería ser un metapaquete que instale todo de
+golpe.
+
+Saludos a todos:
+
+P.S.  Otiolio: no hay ningún error en el rules aunque el mensaje de error te
+diga que está allí.  El único problema es que no estan definidos los
+archivos que van en cada paquete en su respectivo archivo. Si lees los
+mensajes anteriores al error te darás cuenta.
+-------------- part següent --------------
+Un document HTML ha estat eliminat...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/bulmages-pkg-debian/attachments/20100601/d7bb854d/attachment.html">https://lists.berlios.de/pipermail/bulmages-pkg-debian/attachments/20100601/d7bb854d/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Missatge anterior: <A HREF="000030.html">[Bulmages-pkg-debian] Este no consigo solucionarlo
+</A></li>
+	<LI>Missatge següent: <A HREF="000029.html">[Bulmages-pkg-debian] propuesta de paquetes y separación de archivos.
+</A></li>     
+         <LI> <B>Missatges ordenats per:</B> 
+              <a href="date.html#28">[ data ]</a>
+              <a href="thread.html#28">[ fil de discussi&oacute; ]</a>
+              <a href="subject.html#28">[ assumpte ]</a>
+              <a href="author.html#28">[ autor ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/bulmages-pkg-debian">M&eacute;s informaci&oacute; sobre la llista de correu Bulmages-pkg-debian</a><br>
+
+</body></html>
